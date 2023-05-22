@@ -28,7 +28,8 @@ SECRET_KEY = 'django-insecure-f*8s*_u==d)j(3ipdloz#%eg+(iaqr$n4jff*p_a3#irb=z-mf
 DEBUG = False
 
 ALLOWED_HOSTS = ["bhero-battletech-inventory.herokuapp.com", "localhost", "127.0.0.1"]
-
+CORS_ALLOWED_ORIGINS = ['https://bhero-battletech-inventory.herokuapp.com']
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 # Application definition
 
