@@ -22,6 +22,7 @@ class Mech(models.Model):
     slug = models.SlugField(max_length=200, unique=True)
     description = models.TextField(blank=True)
     record_sheet = models.CharField(max_length=50, default='custom')
+    image = models.CharField(max_length=50, default='placeholder')
     battle_value = models.IntegerField(default=9999)
     status = models.IntegerField(choices=STATUS, default=0)
 
