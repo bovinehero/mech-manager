@@ -25,7 +25,7 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = 'django-insecure-f*8s*_u==d)j(3ipdloz#%eg+(iaqr$n4jff*p_a3#irb=z-mf'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["bhero-battletech-inventory.herokuapp.com", "localhost", "127.0.0.1"]
 CORS_ALLOWED_ORIGINS = ['https://bhero-battletech-inventory.herokuapp.com']
