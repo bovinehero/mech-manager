@@ -1,14 +1,14 @@
 {% extends 'base.html' %} {% block content %}
 
 {% load static %}
-{% static "/" as baseUrl %}
+{% static "" as baseUrl %}
 
 <div class="container">
 
     <div class="row">
         <div class="col-12 left">
             <div class="image-container text-center">
-                <img src="{{ baseUrl }}/images/mechs/{{ mech.slug }}-rg.png" alt="{{ mech.name }} Profile Picture" class="img-fluid img-thumbnail">
+                <img src="{{ baseUrl }}images/mechs/{{ mech.image }}-rg.png" alt="{{ mech.name }} Profile Picture" class="img-fluid img-thumbnail">
             </div>
         </div>
         <div class="col-12 left">
@@ -30,13 +30,13 @@
             <p>Slug: {{ mech.slug }}</p>
             <p>Description: {{ mech.description }}</p>
             <p>Record Sheet: {{ mech.record_sheet }}</p>
-            <p><a href="{{ baseUrl }}/readouts/{{ mech.record_sheet }}.pdf" download>Record Sheet</a></p>
+            <p><a href="{{ baseUrl }}readouts/{{ mech.record_sheet }}.pdf" download>Record Sheet</a></p>
             <p>BV: {{ mech.battle_value }}</p>
             <p>Status: {{ mech.get_status_display }}</p>
         </div>
         <div class="col-12 left">
             <div class="iframe-container">
-                <iframe class="responsive-iframe" src="{{ baseUrl }}/images/readouts/{{ mech.record_sheet }}.pdf#view=FitH"></iframe>
+                <iframe class="responsive-iframe" src="{{ baseUrl }}images/readouts/{{ mech.record_sheet }}.pdf#view=FitH"></iframe>
             </div>
         </div>
     </div>
