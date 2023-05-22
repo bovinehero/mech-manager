@@ -1,6 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import HttpResponse, render, get_object_or_404, reverse, redirect
+from django.urls import reverse_lazy
+from django.views import generic, View
+from django.views.generic.edit import CreateView, DeleteView, UpdateView, FormMixin
+from django.http import HttpResponseRedirect
+from django.contrib import messages
 
-# Create your views here.
+from .models import Mech
+from .forms import CreateMechForm, UpdateMechForm
 
 class MechList(generic.ListView):
     model = Mech
