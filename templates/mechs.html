@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container">
+    <h1>Battlemechs</h1>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <p class="lead"><a href="{% url 'mech_create' %}"> Add a New Mech <i class="fas fa-plus-square"></i></a></p>
+      </div>
+    </div>
+    <div class="row">
+
+        <!-- Mech Entries -->
+        <div class="col-12">
+            <div class="row">
+                <table class="table table-sm text-center">
+                    <thead>
+                      <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Actions</th>
+                        <th scope="col">Available</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    {% for mech in mech_list %}
+                      <tr>
+                        <td>
+                          <a href="{% url 'mech_detail' mech.slug  %}">{{ mech.name }}</a>
+                        </td>
+                        <td>
+                          <div class="dropdown show">                 
+                            <button class="btn dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="fa fa-cogs"></i> Menu</a>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                              <a class="dropdown-item" href="{% url 'mech_detail' mech.slug %}">
+                                {% if mech.get_tech_level_display == "Inner Sphere" %}
+                                  <span class="icon-inner-sphere"></span>
+                                {% elif mech.get_tech_level_display == "Clan" %}
+                                  <span class="icon-clan"></span> 
+                                {% else %}
+                                  <span class="icon-mixed"></span>
+                                {% endif %} View Mech
+                              </a>
+                              <a class="dropdown-item " href="{{ baseUrl }}/images/readouts/{{ mech.record_sheet }}.pdf" download><i class="fa fa-download"></i> Download</a>
+                              <a class="dropdown-item" href="{% url 'mech_update' mech.slug %}"><i class="fa fa-edit"></i> Edit</a>
+                              <a class="dropdown-item" href="{% url 'mech_delete' mech.slug %}"><i class="fa fa-trash"></i> Delete</a>
+                            </div>
+                          </div>
+                        </td>
+                        <td>
+                          <a href="{% url 'mech_toggle' mech.slug %}">
+                            {% if mech.get_status_display == "Available" %}
+                              <i class="fa fa-toggle-on"></i>
+                            {% else %}
+                              <i class="fa fa-toggle-off"></i>
+                            {% endif %}
+                          </a>
+                        </td>
+                      </tr>
+                    {% endfor %}
+                    </tbody>
+                  </table>              
+            </div>
+        </div>
+    </div>
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+      <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+          <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+          <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+        {% endif %}
+    </ul>
+    </nav>
+    {% endif %}
+</div>
+
+{%endblock%}
