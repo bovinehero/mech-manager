@@ -11,7 +11,8 @@ class MechAdmin(admin.ModelAdmin):
         'role',
         'record_sheet',
         'battle_value',
-        'status'
+        'status',
+        'image'
         ) 
     search_fields = ['type', 'tech_level']
     list_filter = ('tech_level', )
