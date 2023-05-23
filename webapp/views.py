@@ -4,6 +4,8 @@ from django.views import generic, View
 from django.views.generic.edit import CreateView, DeleteView, UpdateView, FormMixin
 from django.http import HttpResponseRedirect
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
 from .models import Mech
 from .forms import CreateMechForm, UpdateMechForm
@@ -14,8 +16,10 @@ class MechList(generic.ListView):
     template_name = 'mechs.html'
     paginate_by = 10
 
-class MechDetail(generic.ListView):
-    
+
+class MechDetail(LoginRequiredMixin, generic.ListView):
+    login_url = "/accounts/login/"
+
     def get(self, request, slug, *args, **kwargs):
         queryset = Mech.objects.all()
         mech = get_object_or_404(queryset, slug=slug)
@@ -27,7 +31,8 @@ class MechDetail(generic.ListView):
             },
         )
  
-class CreateMechView(generic.CreateView):
+class CreateMechView(LoginRequiredMixin, generic.CreateView):
+    login_url = "/accounts/login/"
     model = Mech
     form_class = CreateMechForm
     template_name = 'mechs_form.html'    
@@ -37,7 +42,8 @@ class CreateMechView(generic.CreateView):
         messages.success(self.request, "The Mech was successfully created.")
         return super(CreateMechView,self).form_valid(form)
 
-class UpdateMechView(UpdateView):
+class UpdateMechView(LoginRequiredMixin, UpdateView):
+    login_url = "/accounts/login/"
     model = Mech
     form_class = UpdateMechForm
     template_name = 'mechs_form.html'    
@@ -47,7 +53,8 @@ class UpdateMechView(UpdateView):
         messages.success(self.request, "The Mech was successfully updated.")
         return super(UpdateMechView,self).form_valid(form)
 
-class DeleteMechView(DeleteView):
+class DeleteMechView(LoginRequiredMixin, DeleteView):
+    login_url = "/accounts/login/"
     model = Mech
     context_object_name = 'mech'
     success_url = reverse_lazy('mechs')
@@ -57,7 +64,7 @@ class DeleteMechView(DeleteView):
         messages.success(self.request, "The Mech was successfully deleted.")
         return super(DeleteMechView, self).delete(request, *args, **kwargs)
     
-   
+@login_required
 def toggle_mech_status(request, slug):
     mech = get_object_or_404(Mech, slug=slug)
     if mech.status == 0:

@@ -35,15 +35,7 @@
                               <i class="fa fa-cogs"></i> Menu</a>
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                              <a class="dropdown-item" href="{% url 'mech_detail' mech.slug %}">
-                                {% if mech.get_tech_level_display == "Inner Sphere" %}
-                                  <span class="icon-inner-sphere"></span>
-                                {% elif mech.get_tech_level_display == "Clan" %}
-                                  <span class="icon-clan"></span> 
-                                {% else %}
-                                  <span class="icon-mixed"></span>
-                                {% endif %} View Mech
-                              </a>
+                              <a class="dropdown-item" href="{% url 'mech_detail' mech.slug %}"><i class="fas fa-eye"></i> View Mech</a>
                               <a class="dropdown-item " href="{{ baseUrl }}images/readouts/{{ mech.record_sheet }}.pdf" download><i class="fa fa-download"></i> Download</a>
                               <a class="dropdown-item" href="{% url 'mech_update' mech.slug %}"><i class="fa fa-edit"></i> Edit</a>
                               <a class="dropdown-item" href="{% url 'mech_delete' mech.slug %}"><i class="fa fa-trash"></i> Delete</a>
@@ -79,5 +71,4 @@
     </nav>
     {% endif %}
 </div>
-
 {%endblock%}
