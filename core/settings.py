@@ -166,4 +166,4 @@ EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_API_KEY')
 
 # The email you'll be sending emails from
 DEFAULT_FROM_EMAIL = os.environ.get('FROM_EMAIL')
-LOGIN_REDIRECT_URL = 'success'
+# LOGIN_REDIRECT_URL = 'success'
