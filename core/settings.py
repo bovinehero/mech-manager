@@ -30,12 +30,13 @@ SECRET_KEY = 'django-insecure-f*8s*_u==d)j(3ipdloz#%eg+(iaqr$n4jff*p_a3#irb=z-mf
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = os.environ.get('DEBUG', False)
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["bhero-battletech-inventory.herokuapp.com", "localhost", "127.0.0.1"]
 CORS_ALLOWED_ORIGINS = ['https://bhero-battletech-inventory.herokuapp.com']
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 # Application definition
 
 INSTALLED_APPS = [
@@ -154,3 +155,15 @@ STATICFILES_DIRS =  [os.path.join(BASE_DIR, "static"),]
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Bottom of settings.py 
+# Twilio SendGrid
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'apikey' # Name for all the SenGrid accounts
+EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_API_KEY')
+
+# The email you'll be sending emails from
+DEFAULT_FROM_EMAIL = os.environ.get('FROM_EMAIL')
+LOGIN_REDIRECT_URL = 'success'

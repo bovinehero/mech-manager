@@ -40,7 +40,9 @@
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                 {% if user.is_authenticated %}
                     <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+                    <a class="dropdown-item" href="{% url 'account_change_password' %}">Password Change</a>
                 {% else %}
+                    <a class="dropdown-item" href="{% url 'account_reset_password' %}">Password Reset</a>
                     <a class="dropdown-item" href="{% url 'account_signup' %}">Register</a>
                     <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
                 {% endif %}

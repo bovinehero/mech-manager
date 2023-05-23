@@ -7,6 +7,7 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
+
 from .models import Mech
 from .forms import CreateMechForm, UpdateMechForm
 
@@ -15,7 +16,6 @@ class MechList(generic.ListView):
     queryset = Mech.objects.all().order_by('name')
     template_name = 'mechs.html'
     paginate_by = 10
-
 
 class MechDetail(LoginRequiredMixin, generic.ListView):
     login_url = "/accounts/login/"
@@ -30,7 +30,7 @@ class MechDetail(LoginRequiredMixin, generic.ListView):
                 "mech": mech
             },
         )
- 
+
 class CreateMechView(LoginRequiredMixin, generic.CreateView):
     login_url = "/accounts/login/"
     model = Mech
