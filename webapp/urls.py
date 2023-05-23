@@ -7,7 +7,7 @@ from django.urls import path
 # NOTE that the post_detail matches the name= value for the slug path converter <slug:slug> <pathconverter:keyword> below
 
 urlpatterns = [
-    path('', views.MechList.as_view(), name='home'), #TODO change this to landing page
+    path('', views.CardList.as_view(), name='home'), #TODO change this to landing page
     path('mechs/', views.MechList.as_view(), name='mechs'),
     path('mechs/create/', views.CreateMechView.as_view(), name="mech_create"),
     path('mechs/<slug:slug>/update/', views.UpdateMechView.as_view(), name="mech_update"),

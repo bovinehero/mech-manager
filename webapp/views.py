@@ -11,7 +11,15 @@ from django.contrib.auth.decorators import login_required
 from .models import Mech
 from .forms import CreateMechForm, UpdateMechForm
 
-class MechList(generic.ListView):
+
+class CardList(generic.ListView):
+    model = Mech
+    queryset = Mech.objects.filter(status=1).order_by('name')
+    template_name = 'index.html'
+    paginate_by = 10
+
+class MechList(LoginRequiredMixin, generic.ListView):
+    login_url = "/accounts/login/"
     model = Mech
     queryset = Mech.objects.all().order_by('name')
     template_name = 'mechs.html'
