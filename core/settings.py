@@ -26,11 +26,11 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-f*8s*_u==d)j(3ipdloz#%eg+(iaqr$n4jff*p_a3#irb=z-mf'
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = os.environ.get('DEBUG', False)
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["bhero-battletech-inventory.herokuapp.com", "localhost", "127.0.0.1"]
 CORS_ALLOWED_ORIGINS = ['https://bhero-battletech-inventory.herokuapp.com']
@@ -166,4 +166,6 @@ EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_API_KEY')
 
 # The email you'll be sending emails from
 DEFAULT_FROM_EMAIL = os.environ.get('FROM_EMAIL')
-# LOGIN_REDIRECT_URL = 'success'
+
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

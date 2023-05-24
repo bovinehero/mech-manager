@@ -7,7 +7,6 @@ from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 
-
 from .models import Mech
 from .forms import CreateMechForm, UpdateMechForm
 
@@ -81,3 +80,6 @@ def toggle_mech_status(request, slug):
         mech.status = 0
     mech.save()
     return redirect('mechs')
+
+def error_404(request, exception):
+    return render(request, '404.html')

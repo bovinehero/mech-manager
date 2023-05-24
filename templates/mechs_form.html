@@ -1,17 +1,33 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-
+{% load static %}
+{% static "" as baseUrl %}
 <div class="container">
     <div class="row">
-      <h2>Mech Form</h2>
-      <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <p>
-          <button type="submit" value="Save">Submit</button>
-        </p>
-      </form>
+      <div class="col-12">
+        <form method="post">
+          {% csrf_token %}
+          <div class="form-row">
+            <div class="form-group col-md-6 mb-0">
+              {{ form.name|as_crispy_field }}
+              {{ form.category|as_crispy_field }}
+              {{ form.weight|as_crispy_field }}
+              {{ form.tech_level|as_crispy_field }}
+              {{ form.role|as_crispy_field }}
+              Record sheet upload feature is pending, "custom"
+              {{ form.record_sheet|as_crispy_field }}
+              {{ form.description|as_crispy_field }}
+            </div>
+            <div class="form-group col-md-6 mb-0">
+              <img src="{{ baseUrl }}images/mechs/placeholder-rg.png" alt="Mech Placeholder Profile Picture" class="img-fluid img-thumbnail">
+              {{ form.battle_value|as_crispy_field }}
+              {{ form.status|as_crispy_field }}
+              <button type="submit" value="Save" class="btn">Submit</button>
+            </div>
+        </form>
+      </div>
     </div>
 </div>
 {%endblock%}
