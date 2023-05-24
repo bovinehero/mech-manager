@@ -41,7 +41,7 @@ class MechDetail(LoginRequiredMixin, generic.ListView):
         )
 
 class CreateMechView(PermissionRequiredMixin, LoginRequiredMixin, generic.CreateView):
-    permission_required = "mech.add_choice"
+    permission_required = "webapp.add_mech"
     login_url = "/accounts/login/"
     model = Mech
     form_class = CreateMechForm
@@ -53,7 +53,7 @@ class CreateMechView(PermissionRequiredMixin, LoginRequiredMixin, generic.Create
         return super(CreateMechView,self).form_valid(form)
 
 class UpdateMechView(PermissionRequiredMixin, LoginRequiredMixin, UpdateView):
-    permission_required = "mech.change_mech"
+    permission_required = "webapp.change_mech"
     login_url = "/accounts/login/"
     model = Mech
     form_class = UpdateMechForm
@@ -65,7 +65,7 @@ class UpdateMechView(PermissionRequiredMixin, LoginRequiredMixin, UpdateView):
         return super(UpdateMechView,self).form_valid(form)
 
 class DeleteMechView(PermissionRequiredMixin, LoginRequiredMixin, DeleteView):
-    permission_required = "mech.delete_mech"
+    permission_required = "webapp.delete_mech"
     login_url = "/accounts/login/"
     model = Mech
     context_object_name = 'mech'
@@ -77,7 +77,7 @@ class DeleteMechView(PermissionRequiredMixin, LoginRequiredMixin, DeleteView):
         return super(DeleteMechView, self).delete(request, *args, **kwargs)
     
 @login_required
-@permission_required("mech.change_mech", raise_exception=True)
+@permission_required("webapp.change_mech", raise_exception=True)
 def toggle_mech_status(request, slug):
     mech = get_object_or_404(Mech, slug=slug)
     if mech.status == 0:
