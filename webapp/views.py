@@ -4,8 +4,10 @@ from django.views import generic, View
 from django.views.generic.edit import CreateView, DeleteView, UpdateView, FormMixin
 from django.http import HttpResponseRedirect
 from django.contrib import messages
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import permission_required
+
 
 from .models import Mech
 from .forms import CreateMechForm, UpdateMechForm
@@ -38,7 +40,8 @@ class MechDetail(LoginRequiredMixin, generic.ListView):
             },
         )
 
-class CreateMechView(LoginRequiredMixin, generic.CreateView):
+class CreateMechView(PermissionRequiredMixin, LoginRequiredMixin, generic.CreateView):
+    permission_required = "mech.add_choice"
     login_url = "/accounts/login/"
     model = Mech
     form_class = CreateMechForm
@@ -49,7 +52,8 @@ class CreateMechView(LoginRequiredMixin, generic.CreateView):
         messages.success(self.request, "The Mech was successfully created.")
         return super(CreateMechView,self).form_valid(form)
 
-class UpdateMechView(LoginRequiredMixin, UpdateView):
+class UpdateMechView(PermissionRequiredMixin, LoginRequiredMixin, UpdateView):
+    permission_required = "mech.change_mech"
     login_url = "/accounts/login/"
     model = Mech
     form_class = UpdateMechForm
@@ -60,7 +64,8 @@ class UpdateMechView(LoginRequiredMixin, UpdateView):
         messages.success(self.request, "The Mech was successfully updated.")
         return super(UpdateMechView,self).form_valid(form)
 
-class DeleteMechView(LoginRequiredMixin, DeleteView):
+class DeleteMechView(PermissionRequiredMixin, LoginRequiredMixin, DeleteView):
+    permission_required = "mech.delete_mech"
     login_url = "/accounts/login/"
     model = Mech
     context_object_name = 'mech'
@@ -72,6 +77,7 @@ class DeleteMechView(LoginRequiredMixin, DeleteView):
         return super(DeleteMechView, self).delete(request, *args, **kwargs)
     
 @login_required
+@permission_required("mech.change_mech", raise_exception=True)
 def toggle_mech_status(request, slug):
     mech = get_object_or_404(Mech, slug=slug)
     if mech.status == 0:
@@ -83,3 +89,6 @@ def toggle_mech_status(request, slug):
 
 def error_404(request, exception):
     return render(request, '404.html')
+
+def error_404(request, exception):
+    return render(request, '403.html')

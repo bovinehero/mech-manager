@@ -59,6 +59,7 @@ a:active {
 .message-container {
   background-color:rgba(0, 0, 0, 0);
   border: none
+  /* border: 10px solid var(--color-yellow); */
 }
 /* from https://www.w3schools.com/howto/howto_css_responsive_iframes.asp */
 
@@ -183,4 +184,11 @@ a:active {
       color: var(--color-yellow);
       opacity: 1;
   }
+}
+
+/*, .carousel-indicators */
+
+.carousel-control-next,
+.carousel-control-prev  {
+    filter: invert(100%);
 }
