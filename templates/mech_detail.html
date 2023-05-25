@@ -6,39 +6,49 @@
 <div class="container">
 
     <div class="row">
-        <div class="col-12 left">
+        <div class="col-sm-12 left">            
             <div class="image-container text-center">
+                <h2>{{ mech.name }}</h2>
                 <img src="{{ baseUrl }}images/mechs/{{ mech.image }}-rg.png" alt="{{ mech.name }} Profile Picture" class="img-fluid img-thumbnail">
+                <h5>
+                    {{ mech.get_tech_level_display }} | {{ mech.get_category_display }} Mech
+                </h5>
             </div>
         </div>
         <div class="col-12 left">
-            <h2>Mech Data</h2>
-            <p>Name: {{ mech.name }}</p>
-            <p>
-            {% if mech.get_tech_level_display == "Inner Sphere" %}
-                <span class="icon-inner-sphere"></span>
-            {% elif mech.get_tech_level_display == "Clan" %}
-                <span class="icon-clan"></span>
+            {% if mech.get_status_display == "Available" %}
+                <span class="badge badge-success">{{ mech.get_status_display }}</span>
             {% else %}
-                <span class="icon-mixed"></span>
+                <span class="badge badge-warning">{{ mech.get_status_display }}</span>
             {% endif %}
-            </p>
-            <p>Category: {{ mech.get_category_display }}</p>
-            <p>Weight: {{ mech.get_weight_display }}</p>
-            <p>Tech Level: {{ mech.get_tech_level_display }}</p>
-            <p>Role: {{ mech.get_role_display }}</p>
-            <p>Slug: {{ mech.slug }}</p>
-            <p>Description: {{ mech.description }}</p>
-            <p>Record Sheet: {{ mech.record_sheet }}</p>
-            <p><a href="{{ baseUrl }}readouts/{{ mech.record_sheet }}.pdf" download>Record Sheet</a></p>
-            <p>BV: {{ mech.battle_value }}</p>
-            <p>Status: {{ mech.get_status_display }}</p>
+            {% if perms.webapp.change_mech %}
+            <a href="{% url 'mech_toggle' mech.slug %}">
+                {% if mech.get_status_display == "Available" %}
+                    <i class="fa fa-toggle-on"></i>
+                {% else %}
+                    <i class="fa fa-toggle-off"></i>
+                {% endif %}
+            </a>
+            {% endif %}
+            <p>The {{ mech.name }} is a {{ mech.get_weight_display }}, {{ mech.get_tech_level_display }} Battlemech.</p>
+            <p>Typically this mech fulfills as the {{ mech.get_role_display }} in a unit with the base configuration coming in with a BV of: {{ mech.battle_value }}</p>
+            <h3>SARNA: Description</h3>
+            <p>{{ mech.description }}</p>               
         </div>
+        {% if mech.get_status_display == "Available" %}
         <div class="col-12 left">
-            <div class="iframe-container">
-                <iframe class="responsive-iframe" src="{{ baseUrl }}images/readouts/{{ mech.record_sheet }}.pdf#view=FitH"></iframe>
+            <p>
+                <a class="btn btn-warning" data-toggle="collapse" href="#collapseSheet" role="button" aria-expanded="false" aria-controls="collapseSheet">
+                    <i class="fas fa-eye"></i> Examine Record Sheet
+                </a>
+            </p>
+            <div class="collapse" id="collapseSheet">
+                <div class="iframe-container">
+                    <iframe class="dropdown-item responsive-iframe" src="{{ baseUrl }}images/readouts/{{ mech.record_sheet }}.pdf#view=FitH"></iframe>
+                </div>
             </div>
         </div>
+        {% endif %}
     </div>
 
 
