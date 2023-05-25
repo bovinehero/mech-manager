@@ -36,19 +36,33 @@
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                               <a class="dropdown-item" href="{% url 'mech_detail' mech.slug %}"><i class="fas fa-eye"></i> View Mech</a>
-                              <a class="dropdown-item " href="{{ baseUrl }}images/readouts/{{ mech.record_sheet }}.pdf" download><i class="fa fa-download"></i> Download</a>
-                              <a class="dropdown-item" href="{% url 'mech_update' mech.slug %}"><i class="fa fa-edit"></i> Edit</a>
-                              <a class="dropdown-item" href="{% url 'mech_delete' mech.slug %}"><i class="fa fa-trash"></i> Delete</a>
+                              {% if mech.get_status_display == "Available" %}
+                                <a class="dropdown-item " href="{{ baseUrl }}images/readouts/{{ mech.record_sheet }}.pdf" download><i class="fa fa-download"></i> Download</a>
+                              {% endif %}
+                              {% if perms.webapp.change_mech %}
+                                <a class="dropdown-item" href="{% url 'mech_update' mech.slug %}"><i class="fa fa-edit"></i> Edit</a>
+                              {% endif %}
+                              {% if perms.webapp.delete_mech %}
+                                <a class="dropdown-item" href="{% url 'mech_delete' mech.slug %}"><i class="fa fa-trash"></i> Delete</a>
+                              {% endif %}
                             </div>
                           </div>
                         </td>
                         <td>
+                          {% if perms.webapp.change_mech %}
                           <a href="{% url 'mech_toggle' mech.slug %}">
-                            {% if mech.get_status_display == "Available" %}
-                              <i class="fa fa-toggle-on"></i>
+                              {% if mech.get_status_display == "Available" %}
+                                <i class="fa fa-toggle-on"></i>
+                              {% else %}
+                                <i class="fa fa-toggle-off"></i>
+                              {% endif %}
+                          {% else %}
+                          {% if mech.get_status_display == "Available" %}
+                              <span class="badge badge-success">{{ mech.get_status_display }}</span>
                             {% else %}
-                              <i class="fa fa-toggle-off"></i>
+                              <span class="badge badge-warning">{{ mech.get_status_display }}</span>
                             {% endif %}
+                          {% endif %}
                           </a>
                         </td>
                       </tr>
