@@ -2,5 +2,6 @@
 .venv/
 .coverage
 htmlcov/
+staticfiles/
 env.py
 db.sqlite3

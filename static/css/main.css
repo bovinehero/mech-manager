@@ -63,6 +63,10 @@ a:active {
 }
 /* from https://www.w3schools.com/howto/howto_css_responsive_iframes.asp */
 
+.iframe-toggle {
+  padding-bottom: 10px;
+}
+
 .iframe-container {
   position: relative;
   overflow: hidden;

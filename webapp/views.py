@@ -58,7 +58,10 @@ class UpdateMechView(PermissionRequiredMixin, LoginRequiredMixin, UpdateView):
     model = Mech
     form_class = UpdateMechForm
     template_name = 'mechs_form.html'    
-    success_url = reverse_lazy('mechs')
+
+    def get_success_url(self):
+        return reverse('mech_detail', kwargs={'slug': self.object.slug})
+
 
     def form_valid(self, form):
         messages.success(self.request, "The Mech was successfully updated.")
