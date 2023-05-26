@@ -196,3 +196,8 @@ a:active {
 .carousel-control-prev  {
     filter: invert(100%);
 }
+
+.btn-delete {
+  background-color: var(--color-white);
+  border: #dc3545 solid 2px;
+}

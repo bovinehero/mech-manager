@@ -4,14 +4,6 @@
 {% static "" as baseUrl %}
 <!-- Fix the toggle and make edit mech finsih on mech view -->
 <div class="container">
-    <div class="row">
-        <div class="col-12">
-            {% if perms.webapp.delete_mech %}
-                <a class="btn btn-warning" href="{% url 'mech_delete' mech.slug %}"><i class="fa fa-trash"></i> Delete</a>
-            {% endif %}
-        </div>
-    </div>
-    <div class="row">
     <div class="row align-items-center">
         <div class="col-sm-12 col-lg-6 left">            
             <div class="image-container text-center">
@@ -30,6 +22,9 @@
                 <p>
                     {% if perms.webapp.change_mech %}
                         <a class="btn btn-warning" href="{% url 'mech_update' mech.slug %}"><i class="fa fa-edit"></i> Edit</a>
+                    {% endif %}
+                    {% if perms.webapp.delete_mech %}
+                        <a class="btn btn-delete" href="{% url 'mech_delete' mech.slug %}"><i class="fa fa-trash"></i> Delete</a>
                     {% endif %}
                 </p>
             </div>
