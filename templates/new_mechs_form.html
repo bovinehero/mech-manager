@@ -7,7 +7,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 left">  
-      <h2>Edit Mech</h2>
+      <h2>Add New Mech</h2>
     </div>
   </div>
   <form method="post">
@@ -16,7 +16,7 @@
       <div class="col-sm-12 col-lg-6 left">            
           <div class="image-container text-center">
               {{ form.name|as_crispy_field }}
-                <img src="{{ baseUrl }}images/mechs/{{ mech.image }}-rg.png" alt="{{ mech.name }} Profile Picture" class="img-fluid img-thumbnail">
+                <img src="{{ baseUrl }}images/mechs/placeholder-rg.png" alt="Placeholder Profile Picture" class="img-fluid img-thumbnail">
               <p>
                 {{ form.tech_level|as_crispy_field }}
               <p>

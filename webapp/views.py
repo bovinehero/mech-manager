@@ -45,7 +45,7 @@ class CreateMechView(PermissionRequiredMixin, LoginRequiredMixin, generic.Create
     login_url = "/accounts/login/"
     model = Mech
     form_class = CreateMechForm
-    template_name = 'mechs_form.html'    
+    template_name = 'new_mechs_form.html'    
     success_url = reverse_lazy('mechs')
 
     def form_valid(self, form):
