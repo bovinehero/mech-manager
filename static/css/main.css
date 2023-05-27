@@ -201,3 +201,7 @@ a:active {
   background-color: var(--color-white);
   border: #dc3545 solid 2px;
 }
+
+.btn-signup {
+  margin-bottom: 1rem;
+}
