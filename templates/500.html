@@ -1,0 +1,59 @@
+<html>
+
+<body>
+    <div class="container">
+        <div class="row">
+        <div class="col-sm-12">
+            <h1>OOPS! Something is Amiss</h1>
+            <section id="section-error">
+                <div class="content-error">
+                    <h2 class="header-error">500 Server Error!</h2>
+                </div>  
+                <div class="content-error">
+                    <div class="console">
+                        <code><span>Dave?</span></code><br>
+                        <code><span>Is that you Dave?</span></code><br>
+                        <code><span>No Dave knows how to use the application.</span></code><br>
+                        <code><span>Unless it's me.</span></code><br>
+                        <code><span>Is it me?</span></code><br>
+                        <code><span>Yes it's me!</span></code><br>
+                        <code><span>Try contacting the site admin for help.</span></code><br>
+                        <code><span>Are you a bot?</span></code><br>
+                        <code><span>If so end of line, program!</span></code><br>
+                    </div>
+                </div>
+            </section>
+        </div>
+        </div>
+    </div>
+    <script>
+        function typeInConsole(lineNumber, timing) {
+        let codeLine = document.getElementsByTagName("code")[lineNumber].innerHTML.toString();
+        let i = 0;
+        document.getElementsByTagName("code")[lineNumber].innerHTML = "";
+        setTimeout(function () {
+            let se = setInterval(function () {
+            i++;
+            document.getElementsByTagName("code")[lineNumber].innerHTML =
+            codeLine.slice(0, i) + "&#9999;";
+            if (i == codeLine.length) {
+                clearInterval(se);
+                document.getElementsByTagName("code")[lineNumber].innerHTML = codeLine;
+            }
+            }, 25);
+        }, timing);
+        }
+        
+        typeInConsole(0, 0);
+        typeInConsole(1, 500);
+        typeInConsole(2, 1000);
+        typeInConsole(3, 1500);
+        typeInConsole(4, 2000);
+        typeInConsole(5, 2500);
+        typeInConsole(6, 3000);
+        typeInConsole(7, 3500);
+        typeInConsole(8, 4000);
+    </script>
+</body>
+
+</html>

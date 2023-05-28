@@ -1,9 +1,6 @@
 from django.db import models
-import itertools
 from django.utils.text import slugify
 
-
-# Create your models here.
 
 TECH = ((0, 'Inner Sphere'), (1, 'Clan'), (2, 'Prototype'))
 ROLE = ((0, 'Ambusher'), (1, 'Brawler'), (2, 'Juggernaut'), (3, 'Missle Boat'), (4, 'Scout'), (5, "Skirmisher"), (6, 'Sniper'), (7, 'Striker'))

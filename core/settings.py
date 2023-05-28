@@ -17,27 +17,15 @@ from pathlib import Path
 if os.path.isfile("env.py"):
     import env
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
-# SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = os.environ.get('DEBUG', False)
 DEBUG = False
 
 ALLOWED_HOSTS = ["bhero-battletech-inventory.herokuapp.com", "localhost", "127.0.0.1"]
 CORS_ALLOWED_ORIGINS = ['https://bhero-battletech-inventory.herokuapp.com']
 X_FRAME_OPTIONS = 'SAMEORIGIN'
-
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -98,16 +86,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'core.wsgi.application'
 
-
-# Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
 DATABASES = {
         'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
-
-# Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -124,52 +105,23 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-# Internationalization
-# https://docs.djangoproject.com/en/3.2/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
-
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
-
-## Deploy this
-# STATIC_URL = 'assets/'
-
-## this is DEV
 STATIC_URL = os.path.join(BASE_DIR, "staticfiles/")
-# STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 STATIC_ROOT =  os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_DIRS =  [os.path.join(BASE_DIR, "static"),]
 
-
-# MEDIA_URL = '/media/'
-# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# Bottom of settings.py 
-# Twilio SendGrid
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'apikey' # Name for all the SenGrid accounts
+EMAIL_HOST_USER = 'apikey'
 EMAIL_HOST_PASSWORD = os.environ.get('SENDGRID_API_KEY')
-
-# The email you'll be sending emails from
 DEFAULT_FROM_EMAIL = os.environ.get('FROM_EMAIL')
-
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

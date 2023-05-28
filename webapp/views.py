@@ -1,8 +1,7 @@
-from django.shortcuts import HttpResponse, render, get_object_or_404, reverse, redirect
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.urls import reverse_lazy
-from django.views import generic, View
-from django.views.generic.edit import CreateView, DeleteView, UpdateView, FormMixin
-from django.http import HttpResponseRedirect
+from django.views import generic
+from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth.decorators import login_required
@@ -93,5 +92,8 @@ def toggle_mech_status(request, slug):
 def error_404(request, exception):
     return render(request, '404.html')
 
-def error_404(request, exception):
+def error_403(request, exception):
     return render(request, '403.html')
+
+def error_500(request):
+    return render(request, '500.html')

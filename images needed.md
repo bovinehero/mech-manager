@@ -18,3 +18,6 @@ lg-wireframe-mech_form.png
 wireframe-mech_delete.png
 med-wireframe-mech_delete.png
 lg-wireframe-mech_delete.png
+
+
+rename all images, compress down to web size

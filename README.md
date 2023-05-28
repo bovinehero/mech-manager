@@ -436,14 +436,23 @@ The WAVE WebAIM web accessibility evaluation tool was used to ensure the website
 ## Testing
 ***
 
-- Knowledge flow was tested during and post development and all
-results for 
-    - Device Testing
-    - Browser Compatibility
-    - Manual Testing
-    - Automated Testing
+### Browser Compatibility
+The website was tested on the following browsers:
 
-    are contained in TESTING.md file that you can see [here.](https://github.com/rockroman/CI_PP4-Knowledge-Flow/blob/main/docs/TESTING.md)
+1. Google Chrome
+2. Mozilla Firefox
+
+### Testing User Stories
+
+1. User Story
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| reference feature above | What to do | What should happen  | Works as expected |
+
+
+
+
 
 ## Bugs
 ***
