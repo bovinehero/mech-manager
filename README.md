@@ -442,6 +442,13 @@ The website was tested on the following browsers:
 1. Google Chrome
 2. Mozilla Firefox
 
+### Testing
+
+``` sh
+coverage run --source=webapp manage.py test
+```
+
+
 ### Testing User Stories
 
 1. User Story
