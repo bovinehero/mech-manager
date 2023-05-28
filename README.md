@@ -444,9 +444,23 @@ The website was tested on the following browsers:
 
 ### Testing
 
+In order to preserve the prod db, in testing I used a sqlite.db by changing the __DATABASES__ variable in `settings.py` to the following:
+
+``` py
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+    }
+}
+```
+
+
 ``` sh
 coverage run --source=webapp manage.py test
 ```
+
+
 
 
 ### Testing User Stories
