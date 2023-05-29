@@ -125,15 +125,30 @@ As the main stakeholder, this means I am free to work on any story I deem the mo
 
 ### Epics
 
-### User stories
-User Stories
+1. [Initial Setup](https://github.com/bovinehero/battletech-inventory/issues/1): the initial (non development) Environment set up. Stories here were largerly completed using refernce to Code Academy documents or work I'd completed in my Django Starter [repo](https://github.com/bovinehero/django-starter) 
+2. [Basic CRUD setup for Pilots and Mechs](https://github.com/bovinehero/battletech-inventory/issues/10): covers the use case of players being able to access the content. This app included a lot of PoC research on the battle-tech inventory [repo](https://github.com/bovinehero/battletech-inventory). Much of this code was ported directly over to this repo. Ordinarily I would have blocked the battle-tech inventory [repo](https://github.com/bovinehero/battletech-inventory), however as it may be required for git history references as part of this project I have left it public.
+3. [First Release](https://github.com/bovinehero/battletech-inventory/issues/6): work required to get an MVP release of the Project Application. As work progressed I had some difficulty producing a reliable deployment experience with Cloudinary and decided to start this repo to debug the issues. After a review of the concept at the games club the feedback was that as players managed their own characters Mechs were the only components the players cared about. And so the orginal MVP scope was reduced to only include Mechs.
 
+### User stories
+
+I took the view of comprehensive stories broken down into specific tasks, in hindsight the user stories may have been too vauge as many of the tasks took long enough to merit being their own story.
+
+1. [Setup Heroku](https://github.com/bovinehero/battletech-inventory/issues/2): As a Developer I need a remote hosting solution for the application so that build and test on a prod-like env.
+2. [Setup CMS](https://github.com/bovinehero/battletech-inventory/issues/3): As a Developer I need a remote CMS to host static content for the application so that build and test on a prodlike env.
+3. [Setup Remote dB](https://github.com/bovinehero/battletech-inventory/issues/4): As a Developer I need a remote db to facilitate as a preprod/prod environment so that build and test on a prodlike env.
+4. [Django Base Setup](https://github.com/bovinehero/battletech-inventory/issues/5): As a developer I need my base django dev env configured so that I can begin devlopement - this story leveraged work I'd already completed in setting up the Django Starter [repo](https://github.com/bovinehero/django-starter)
+5. [Admin app setup](https://github.com/bovinehero/battletech-inventory/issues/8): As a site admin I need a basic admin panel setup so that perform admin functions and see visible results of models.
+6. [Create Read Functionality on Pilots and Mechs](https://github.com/bovinehero/battletech-inventory/issues/11): As a battletech player I need a way to fetch information about pilots and mechs so that I can see which units are available for the campaign.
+7. [Implement Update Functionality on Pilots and Mechs](https://github.com/bovinehero/battletech-inventory/issues/12): As a battletech player I need a way to edit information about my pilots and mechs so that I can change the pilot and mech details as the campaign progresses.
+8. [Implement Create/Delete new Pilot and Mech functionality](https://github.com/bovinehero/battletech-inventory/issues/13): As a battletech GM I need a way to create/delete pilots and mechs so that as the campaign progresses I can recruit new pilots and mechs.
+9. [Setup frontend](https://github.com/bovinehero/battletech-inventory/issues/14):
+As a battletech player I need a way to easily navigate around the site so that I can interact with pilot and mech details.
 
 ## Design
 ***
 ### Colours
 > blurb about colours
-The Color pallet was created using [Coolors.co](https://coolors.co/)
+The Color pallet was created using [Coolors.co](https://coolors.co/) based off of the colours identified in the landing page's hero image.
 <details><summary>See colour pallet</summary>
 <img src="docs/images/color_palete.png">
 </details>
@@ -151,7 +166,7 @@ The Color pallet was created using [Coolors.co](https://coolors.co/)
 > blurb about over all
 
 #### sections:
-1.  Home page
+1. Home page
 2. Auth Forms
 3. List View
 4. Detail Page
@@ -330,13 +345,13 @@ Items athat are Done are live.
 #### Closing words on agile:
 Agile project management involves breaking the project into phases and emphasizes continuous collaboration and improvement. As this is an emulated project envrionment collaboration is not a reasonable item that can be measured.
 
-The project consisted of 3 main Epic phases:
+The project consisted of 3 main phases:
 
 1. Initial Setup - Setup of initial repo and prod dependencies
 2. Basic Crud Setup - Coding of the basic functionality
 3. First Release - Productionisation of app with User Access Controls (UAC)
 
-Each epic contained 1 or more stories defined with implementation tasks.
+Each phase represented an epic and contained 1 or more stories defined with implementation tasks.
 
 After the initial release and completion of the first milestone, our workflow becomes a regular inclusion of improvemnts, bug reporsts or new feature requests. 
 
