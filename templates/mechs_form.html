@@ -7,7 +7,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 left">  
-      <h2>Edit Mech</h2>
+      <h1>Edit Mech</h1>
     </div>
   </div>
   <form method="post">
@@ -32,7 +32,10 @@
     </div>
     <div class="row">
       <div class="col-12">
-          <button style="margin: 1rem;" type="submit" value="Save" class="btn btn-warning float-right">Submit</button>
+        <p class="form-buttons float-right">
+          <button style="margin: 1rem;" type="submit" value="Save" class="btn btn-warning">Submit</button>
+          <a href="{% url 'mechs'%}" class="btn btn-outline">Cancel</a>
+        </p>
       </div>
     </div>
     </form>

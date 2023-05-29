@@ -512,13 +512,41 @@ Threw one error of undefined variable `bootstrap`, this is not an issue as the v
 ### Wave
 The WAVE WebAIM web accessibility evaluation tool was used to ensure the website met high accessibility standards.
 
-+ page1.html [results](https://wave.webaim.org/report#/https://<path to page>//pagen.html)
+index.html [results](https://wave.webaim.org/report#/https://bhero-battletech-inventory.herokuapp.com/) - no errors
 
-+ page2.html [results](https://wave.webaim.org/report#/https://<path to page>//pagen.html)
+Urls behind auth were tested via the WAVE [plugin](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) on chrome
 
-+ page3.html [results](https://wave.webaim.org/report#/https://<path to page>//pagen.html)
 
-+ pageN.html [results](https://wave.webaim.org/report#/https://<path to page>//pagen.html)
+<details><summary>mech_delete.html</summary>
+<img src="docs/images/wave-mech_delete.png" width="800">
+</details>
+
+<details><summary>mech_detail.html</summary>
+<img src="docs/images/wave-mech_detail.png" width="800">
+</details>
+
+Contrast error due to default bootstrap theme on "available" pill - accepted as this is vanilla bootstrap theme.
+
+<details><summary>mechs_form.html</summary>
+<img src="docs/images/wave-mechs_form..png" width="800">
+</details>
+
+<details><summary>mechs.html</summary>
+<img src="docs/images/wave-mechs.png" width="800">
+</details>
+
+<details><summary>new_mechs_form.html</summary>
+<img src="docs/images/wave-new_mechs_form.png" width="800">
+</details>
+
+Alerts were due to 
+1. redundant links in name column and in the Actions Menu drop downs - accepted as links in the name column were added as convenience.
+2. pdf downloads being untestable - accepted as these are third party
+
+<details><summary>new_mechs_form.html</summary>
+<img src="docs/images/wave-new_mechs_form.png" width="800">
+</details>
+
 
 ## Testing
 ***

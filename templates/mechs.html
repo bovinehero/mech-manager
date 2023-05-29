@@ -55,7 +55,7 @@
                         </td>
                         <td>
                           {% if perms.webapp.change_mech %}
-                          <a href="{% url 'mech_toggle' mech.slug %}">
+                          <a href="{% url 'mech_toggle' mech.slug %}" aria-label="toggle mech availability">
                               {% if mech.get_status_display == "Available" %}
                                 <i class="fa fa-toggle-on"></i>
                               {% else %}
