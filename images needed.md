@@ -1,3 +1,10 @@
+Complete README.md
+
+get manual test evidence
+
+feature images
+
+
 mockup.png
 color_palete.png
 fonts.png

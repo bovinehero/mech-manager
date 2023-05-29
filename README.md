@@ -56,14 +56,32 @@
 
 ## About
 
-> write an about
+At our local Board Games Club we have a regular Battletech Mercenaries Campaign that uses a pool of shared minatures for a session. 
+They players are grouped into 2 types, Player Characters and Games Masters (GMs).
+
+Player Characters control individual Mechwarriors that pilot might battlemechs and are responsible for managing their own character progression records and battlemech minatures.
+
+GMs generate an OpFor based on the Battle Value (BV) of the Mechwarriors and their Battle Mechs, the requirements of the Campaign and any additional Mechs available in the club.
+As the Games Club meets weekly most of the work for a session needs to planned ahead of the meet.
+
+As the club is inclusive of new players they are free to use any un-used Mech in a play session.
+Unexpected players add BV to the player force and often GMs need a quick way to update their forces to ensure a balance.
+
+This creates a situation where the GM and new players get bogged down in one of the many source books for the game trying to find suitable Mechs for the situation.
+Compounding the issue is that while the source books offer a comprehensive background they can be intimidating to beginners which makes selecting a mech time consuming.
+
+This App bridges that gap by allowing GMs (Commanders) to manage the available mechs based on the campaign needs and weather or not the minature is availabel for other players to use.
+
+New players are free to register accounts and view all of the mechs in the club's inventory and get an idea of which mechs they would like to use based on what is currently available.
+
+At this time, there is no requirment to manage the minature stock levels as games exceeding 6 mechwarriors are rare and the club can onlt support 1 Battletech game per meet. If scale is required at a later date then this requirment would be revised
 
 ***
 ## Project Goals
 Primary goals of the project (web app):
 - Give authorised users the ability to view some details about the the mechs available for our next battletech game.
-- Enable Admin users the ability to manage the battlemech records.
-- Enable Site Owners to be able to View and edit records.
+- Enable Admin users (GMs) the ability to manage the battlemech records.
+- Enable Site Owners to be able to View and edit records via the backend.
   
 
 ### User Goals
@@ -86,9 +104,7 @@ Primary goals of the project (web app):
 - Our Local Games Club, and prospective players that want to know which mech models are available for upcoming games.
 - Individuals Interested in Battletech
 
-
 ### User Requirements and Expectations
-
 - Application with a clear purpose
 - An easy and intuitive user interface that allows efficient navigation
 - A Responsive and visually good design
@@ -98,7 +114,14 @@ Primary goals of the project (web app):
 ##### Back to [top](#table-of-contents)
 
 ### Project Management
-Talk about Kanban, tshirt sizes and board
+
+As the sole major stakeholder and developer on the project, an MVP based on SCRUM was not the ideal agile solution. Instead I opted for a Kanban approach in order to maintain a fully iterative approach to the development process.
+
+As Kanban is designed to add value in a continous iterative process, once the MVP is in place there is flexibility on how and when new features, enhancements and bug fixes can be applied. 
+
+Kanban supports CI/CD better than SCRUM in solo teams as there is no need to sprint plan, story priorities are reviewed regularly and offer a fluid way to apply the most value to the product without waiting until the end of a sprint.
+
+As the main stakeholder, this means I am free to work on any story I deem the most important but in a real project this would need to undergo buisness review on a regular cadence.
 
 ### Epics
 
@@ -138,10 +161,11 @@ The Color pallet was created using [Coolors.co](https://coolors.co/)
 8. 404/403 Page
 
 
-> HERE
+
 
 ### Code structure
 Project code structure is organized and divided into a core app and a webapp app.
+
 #### Project Apps:
 - Core app - I use the convention of a core app to manage the django functionality to provide a uniformity in all my django projects. This allows me to use my [django-starter](https://github.com/bovinehero/django-starter) repo as a quickstart basis for new django projects. This keeps the core app functionality for the webserver in a single app and allows reuse in other projects with modificatios to the `settings.py` file contained within.
 
