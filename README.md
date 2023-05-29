@@ -445,7 +445,7 @@ Urls behind auth were tested via text input on the Nu HTML Checker
 </details>
 
 <details><summary>mechs_form.html - No Errors Found</summary>
-<img src="docs/images/mechs_form.html.png" width="800">
+<img src="docs/images/mechs_form.png" width="800">
 </details>
 
 <details><summary>mechs.html - No Errors Found</summary>
@@ -453,25 +453,27 @@ Urls behind auth were tested via text input on the Nu HTML Checker
 </details>
 
 <details><summary>new_mechs_form.html - No Errors Found</summary>
-<img src="docs/images/new_mechs_form.html.png" width="800">
-</details
+<img src="docs/images/new_mechs_form.png" width="800">
+</details>
 
 
 ### CSS
 [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/)was used  to validate the css in the project. 
-Index [results](https://jigsaw.w3.org/css-validator/validator?uri=ADDURI) - No Error Found.
+main.css [results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbhero-battletech-inventory.herokuapp.com%2Fapp%2Fstaticfiles%2Fcss%2Fmain.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - No Error Found.
 
 
 
 ### Javascript
 + [JShint](https://jshint.com/) was used to validate custom scripts included in the templates. 
 
-<details><summary>Js snippet1</summary>
-<img src="docs/images/validation-js1.png" width="800" >
+<details><summary>Messages Handler - 1 N/A error</summary>
+<img src="docs/images/messages.png" width="800" >
 </details>
 
-<details><summary>Js snippet2</summary>
-<img src="docs/images/validation-js2.png" width="800" >
+Threw one error of undefined variable `bootstrap`, this is not an issue as the variable is defined in the bootstrap import on the __base.html__ template
+
+<details><summary>403/404/500 Error handler - No Errors Found</summary>
+<img src="docs/images/error_handle.png" width="800" >
 </details>
 
 ### Python
@@ -483,8 +485,28 @@ Index [results](https://jigsaw.w3.org/css-validator/validator?uri=ADDURI) - No E
 
 + [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for performance, accessibility, progressive web apps, SEO analysis of the project code here are the results:
 
-<details><summary>Page N</summary>
-<img src="docs/images/lighthouse-pagen.png" >
+<details><summary>index.html</summary>
+<img src="docs/images/lh-index.png" width="800">
+</details>
+
+<details><summary>mech_delete.html</summary>
+<img src="docs/images/lh-mech_delete.png" width="800">
+</details>
+
+<details><summary>mech_detail.html</summary>
+<img src="docs/images/lh-mech_detail.png" width="800">
+</details>
+
+<details><summary>mechs_form.html</summary>
+<img src="docs/images/lh-mechs_form.png" width="800">
+</details>
+
+<details><summary>mechs.html</summary>
+<img src="docs/images/lh-mechs.png" width="800">
+</details>
+
+<details><summary>new_mechs_form.html</summary>
+<img src="docs/images/lh-new_mechs_form.png" width="800">
 </details>
 
 ### Wave
