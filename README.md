@@ -431,14 +431,40 @@ some of the existing features
 
 ### Html
 [WC3 Validator](https://validator.w3.org/) was used to validate the html in the project. 
-[results](https://validator.w3.org/nu/?doc=ADDURI) - No Errors Found
+
++ Index.html [results](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fbhero-battletech-inventory.herokuapp.com%2F) - No Errors Found
++ Sign In [results](https://validator.w3.org/nu/?showsource=yes&showoutline=yes&showimagereport=yes&doc=https%3A%2F%2Fbhero-battletech-inventory.herokuapp.com%2Fmechs%2F)
+
+Urls behind auth were tested via text input on the Nu HTML Checker
+<details><summary>mech_delete.html - No Errors Found</summary>
+<img src="docs/images/mech_delete.png" width="800">
+</details>
+
+<details><summary>mech_detail.html - No Errors Found</summary>
+<img src="docs/images/mech_detail.png" width="800">
+</details>
+
+<details><summary>mechs_form.html - No Errors Found</summary>
+<img src="docs/images/mechs_form.html.png" width="800">
+</details>
+
+<details><summary>mechs.html - No Errors Found</summary>
+<img src="docs/images/mechs.png" width="800">
+</details>
+
+<details><summary>new_mechs_form.html - No Errors Found</summary>
+<img src="docs/images/new_mechs_form.html.png" width="800">
+</details
+
 
 ### CSS
 [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/)was used  to validate the css in the project. 
-[results](https://jigsaw.w3.org/css-validator/validator?uri=ADDURI) - No Error Found.
-  
+Index [results](https://jigsaw.w3.org/css-validator/validator?uri=ADDURI) - No Error Found.
+
+
+
 ### Javascript
-- [JShint](https://jshint.com/) was used to validate custom scripts included in the templates. 
++ [JShint](https://jshint.com/) was used to validate custom scripts included in the templates. 
 
 <details><summary>Js snippet1</summary>
 <img src="docs/images/validation-js1.png" width="800" >
@@ -449,13 +475,13 @@ some of the existing features
 </details>
 
 ### Python
-- [CI Python Linter](https://pep8ci.herokuapp.com/) to check  Python code for validity and conventions
++ [CI Python Linter](https://pep8ci.herokuapp.com/) to check  Python code for validity and conventions
 
-- pep8 linter in VSCode
++ pep8 linter in VSCode
 
 ### Lighthouse
 
-- [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for performance, accessibility, progressive web apps, SEO analysis of the project code here are the results:
++ [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for performance, accessibility, progressive web apps, SEO analysis of the project code here are the results:
 
 <details><summary>Page N</summary>
 <img src="docs/images/lighthouse-pagen.png" >

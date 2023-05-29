@@ -17,23 +17,17 @@
           <div class="image-container text-center">
               {{ form.name|as_crispy_field }}
                 <img src="{{ baseUrl }}images/mechs/placeholder-rg.png" alt="Placeholder Profile Picture" class="img-fluid img-thumbnail">
-              <p>
                 {{ form.tech_level|as_crispy_field }}
-              <p>
-              <p>
                 {{ form.category|as_crispy_field  }}
-              <p>
                 {{ form.status|as_crispy_field }}
-              </p>
           </div>
       </div>
       <div class="col-12 col-lg-6 text-middle">
-        <p>{{ form.weight|as_crispy_field }}</p>
-        <p>{{ form.tech_level|as_crispy_field }}</p>
-        <p>{{ form.role|as_crispy_field }}</p>
-        <p>{{ form.battle_value|as_crispy_field }}</p> 
-        <p>{{ form.description|as_crispy_field }}</p>
-        <p>{{ form.record_sheet|as_crispy_field }}</p> 
+        {{ form.weight|as_crispy_field }}
+        {{ form.role|as_crispy_field }}
+        {{ form.battle_value|as_crispy_field }}
+        {{ form.description|as_crispy_field }}
+        {{ form.record_sheet|as_crispy_field }}
       </div>
     </div>
     <div class="row">

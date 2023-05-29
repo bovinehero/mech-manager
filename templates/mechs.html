@@ -36,10 +36,10 @@
                         </td>
                         <td>
                           <div class="dropdown show">                 
-                            <button class="btn dropdown-toggle btn-block" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              <i class="fa fa-cogs"></i> Menu</a>
+                            <button class="btn dropdown-toggle btn-block" type="button" id="dropdownMenuButton_{{ mech.slug }}" data-bs-toggle="dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              <i class="fa fa-cogs"></i> Menu
                             </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton_{{ mech.slug }}">
                               <a class="dropdown-item" href="{% url 'mech_detail' mech.slug %}"><i class="fas fa-eye"></i> View Mech</a>
                               {% if mech.get_status_display == "Available" %}
                                 <a class="dropdown-item " href="{{ baseUrl }}images/readouts/{{ mech.record_sheet }}.pdf" download><i class="fa fa-download"></i> Download</a>
