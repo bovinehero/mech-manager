@@ -149,7 +149,7 @@ As a battletech player I need a way to easily navigate around the site so that I
 ### Colours
 The Color pallet was created using [Coolors.co](https://coolors.co/) based off of the colours identified in the landing page's hero image.
 <details><summary>See colour pallet</summary>
-<img src="docs/images/color_palete.png">
+<img src="docs/images/-palete.png">
 </details>
 
 ### Fonts
@@ -210,7 +210,7 @@ As part of the work I created a specific [branch](https://github.com/bovinehero/
 I then toyed with the idea of 
 
 <details><summary>Second Iteration Database Model</summary>
-<img src="battletech-db-relationships2.png">
+<img src="docs/images/battletech-db-relationships2.png">
 </details>
 
 - The model showed on the diagram visually represents the structure of a PostgreSQL database, including tables, columns, relationships, and constraints, that is actually stored in the database itself.
@@ -445,15 +445,15 @@ some of the existing features
 
 Urls behind auth were tested via text input on the Nu HTML Checker
 <details><summary>mech_delete.html - No Errors Found</summary>
-<img src="docs/images/mech_delete.png" width="800">
+<img src="docs/images/mech-delete.png" width="800">
 </details>
 
 <details><summary>mech_detail.html - No Errors Found</summary>
-<img src="docs/images/mech_detail.png" width="800">
+<img src="docs/images/mech-detail.png" width="800">
 </details>
 
 <details><summary>mechs_form.html - No Errors Found</summary>
-<img src="docs/images/mechs_form.png" width="800">
+<img src="docs/images/mechs-form.png" width="800">
 </details>
 
 <details><summary>mechs.html - No Errors Found</summary>
@@ -461,7 +461,7 @@ Urls behind auth were tested via text input on the Nu HTML Checker
 </details>
 
 <details><summary>new_mechs_form.html - No Errors Found</summary>
-<img src="docs/images/new_mechs_form.png" width="800">
+<img src="docs/images/new-mechs-form.png" width="800">
 </details>
 
 
@@ -544,25 +544,25 @@ index.html [results](https://wave.webaim.org/report#/https://bhero-battletech-in
 Urls behind auth were tested via the WAVE [plugin](https://chrome.google.com/webstore/detail/wave-evaluation-tool/jbbplnpkjmmeebjpijfedlgcdilocofh) on chrome
 
 
-<details><summary>mech_delete.html</summary>
+<details><summary>mech_delete.html - no errors</summary>
 <img src="docs/images/wave-mech-delete.png" width="800">
 </details>
 
-<details><summary>mech_detail.html</summary>
+<details><summary>mech_detail.html - 1 error</summary>
 <img src="docs/images/wave-mech-detail.png" width="800">
 </details>
 
 Contrast error due to default bootstrap theme on "available" pill - accepted as this is vanilla bootstrap theme.
 
-<details><summary>mechs_form.html</summary>
+<details><summary>mechs_form.html - no errors</summary>
 <img src="docs/images/wave-mechs-form..png" width="800">
 </details>
 
-<details><summary>mechs.html</summary>
+<details><summary>mechs.html - no errors</summary>
 <img src="docs/images/wave-mechs.png" width="800">
 </details>
 
-<details><summary>new_mechs_form.html</summary>
+<details><summary>new_mechs_form.html - no errors</summary>
 <img src="docs/images/wave-new-mechs-form.png" width="800">
 </details>
 
@@ -570,7 +570,7 @@ Alerts were due to
 1. redundant links in name column and in the Actions Menu drop downs - accepted as links in the name column were added as convenience.
 2. pdf downloads being untestable - accepted as these are third party
 
-<details><summary>new_mechs_form.html</summary>
+<details><summary>new_mechs_form.html - no errors</summary>
 <img src="docs/images/wave-new-mechs-form.png" width="800">
 </details>
 
@@ -755,7 +755,7 @@ Should this fail __Disable Automatic Deploys__ via the button above.
 
 Manual Deployments can be triggered below
 
-![Heroku Manual Deploy](manual-deploy.png)
+![Heroku Manual Deploy](docs/images/manual-deploy.png)
 
 The main noticible configuration component is the env vars to towit the Heroku environment requires the following settings copied from the local __env.py__ file:
 
