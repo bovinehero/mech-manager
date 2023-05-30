@@ -1,5 +1,10 @@
+""" Contains the MVC models for the app """
+
+# imports occur at runtime, so fail linter
+# pylint:disable=import-error
 from django.db import models
 from django.utils.text import slugify
+# pylint:enable=import-error
 
 
 TECH = ((0, 'Inner Sphere'), (1, 'Clan'), (2, 'Prototype'))
@@ -20,7 +25,10 @@ STATUS = ((0, "Not Available"), (1, "Available"))
 
 
 class Mech(models.Model):
-
+    """
+    Stores a single mech entry, image and record_sheet
+    fields are used as refernces for urls
+    """
     name = models.CharField(max_length=50, unique=True)
     category = models.IntegerField(choices=CLASSIFICATION, default=0)
     weight = models.IntegerField(choices=WEIGHTS, default=0)
@@ -34,6 +42,9 @@ class Mech(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
 
     def save(self, *args, **kwargs):
+        """
+        Override for model.save to auto generate a slug on edits
+        """
         value = self.name
         self.slug = slugify(value, allow_unicode=True)
         super().save(*args, **kwargs)

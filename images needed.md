@@ -6,3 +6,5 @@ add wireframes
 add comments to code
 add dB models
 filenames
+
+screenshots for heroku

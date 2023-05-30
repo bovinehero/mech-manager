@@ -189,7 +189,7 @@ Project code structure is organized and divided into a core app and a webapp app
 - **.gitignore**: File with all the information on items git should ignore
 - **env.py**: COntains the env secrets required to runt the app, should be defined in the initial stages of development.
 - **Procfile**: This file advises Heroku which commands should be run when it is deployed.
-- **manage.py**- django wrapper script to help manage the project.
+- **manage.py** django wrapper script to help manage the project.
 - **requirements.txt**: This file lists the dependencies required for the Django project to run.
 - **runtime.txt**: This file advises Heroku which buildback is required to run the app. It is set to python 3.9.16 as the local development env is python 3.9.
 
