@@ -266,52 +266,33 @@ In a future iteration, the options could be ported to relational tables within t
 
 ### Wireframes
 
-TODO
 <details><summary>Home page</summary>
-<img src="docs/images/wireframe-home-page.png">
-<img src="docs/images/med-wireframe-home-page.png">
-<img src="docs/images/lg-wireframe-home-page.png">
-<img src="docs/images/home-page.png">
-<img src="docs/images/med-home-page.png">
-<img src="docs/images/lg-home-page.png">
+<img src="docs/images/wireframe-index.png">
 </details>
 
-<details><summary>authentication pages(Login,register,logout,password reset and password reset done)</summary>
-<img src="docs/images/wireframe-authentication-pages.png">
-<img src="docs/images/med-wireframe-authentication-pages.png">
-<img src="docs/images/lg-wireframe-authentication-pages.png">
-<img src="docs/images/authentication-pages.png">
-<img src="docs/images/med-authentication-pages.png">
-<img src="docs/images/lg-authentication-pages.png">
+<details><summary>Mech List</summary>
+<img src="docs/images/wireframe-mech-list.png">
 </details>
-
 
 <details><summary>Mech Detail</summary>
-<img src="docs/images/wireframe-mech_detail.png">
-<img src="docs/images/med-wireframe-mech_detail.png">
-<img src="docs/images/lg-wireframe-mech_detail.png">
-<img src="docs/images/mech_detail.png">
-<img src="docs/images/med-mech_detail.png">
-<img src="docs/images/lg-mech_detail.png">
+<img src="docs/images/wireframe-read.png">
 </details>
 
-<details><summary>Edit & Create Mech</summary>
-<img src="docs/images/wireframe-mech_form.png">
-<img src="docs/images/med-wireframe-mech_form.png">
-<img src="docs/images/lg-wireframe-mech_form.png">
-<img src="docs/images/mech_form.png">
-<img src="docs/images/med-mech_form.png">
-<img src="docs/images/lg-mech_form.png">
+<details><summary>Edit Mech</summary>
+<img src="docs/images/wireframe-edit.png">
+</details>
+
+<details><summary>Create Mech</summary>
+<img src="docs/images/wireframe-create.png">
 </details>
 
 <details><summary>Delete Mech</summary>
-<img src="docs/images/wireframe-mech_delete.png">
-<img src="docs/images/med-wireframe-mech_delete.png">
-<img src="docs/images/lg-wireframe-mech_delete.png">
-<img src="docs/images/mech_delete.png">
-<img src="docs/images/med-mech_delete.png">
-<img src="docs/images/lg-mech_delete.png">
+<img src="docs/images/wireframe-delete.png">
 </details>
+
+The authentication pages (Login, register, logout, password reset and password reset done) were all created using default views and did not get wireframes 
+
+The error pages were created at the end for additional functionality, and also did not get initial wireframes
 
 ***
 
@@ -425,6 +406,7 @@ This allows us to work towards an easy way to implement improvements via Continu
 ## Features
 
 ***
+TODO
 
 1. [Setup Heroku](https://github.com/bovinehero/battletech-inventory/issues/2): As a Developer I need a remote hosting solution for the application so that build and test on a prod-like env.
 2. [Setup CMS](https://github.com/bovinehero/battletech-inventory/issues/3): As a Developer I need a remote CMS to host static content for the application so that build and test on a prodlike env.
