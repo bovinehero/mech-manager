@@ -1,7 +1,7 @@
 # mech-manager
 
 # Knowledge Flow
-(Developer: Roman Rakic)
+(Developer: Gary Grant)
 
 ![Mockup image](docs/imahes/mockup.png)
 
@@ -472,7 +472,7 @@ main.css [results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F
 
 
 ### Javascript
-+ [JShint](https://jshint.com/) was used to validate custom scripts included in the templates. 
+[JShint](https://jshint.com/) was used to validate custom scripts included in the templates. 
 
 <details><summary>Messages Handler - 1 N/A error</summary>
 <img src="docs/images/messages.png" width="800" >
@@ -485,14 +485,15 @@ Threw one error of undefined variable `bootstrap`, this is not an issue as the v
 </details>
 
 ### Python
-+ [CI Python Linter](https://pep8ci.herokuapp.com/) to check  Python code for validity and conventions
+[CI Python Linter](https://pep8ci.herokuapp.com/) to check  Python code for validity and conventions
 
+settings.py returned the following errors:
++ 89: E501 line too long (91 > 79 characters)
++ 92: E501 line too long (81 > 79 characters)
++ 95: E501 line too long (82 > 79 characters)
++ 98: E501 line too long (83 > 79 characters)
 
-settings.py
-+ 96: E501 line too long (91 > 79 characters)
-+ 99: E501 line too long (81 > 79 characters)
-+ 102: E501 line too long (82 > 79 characters)
-+ 105: E501 line too long (83 > 79 characters)
+As these are django generated values for `AUTH_PASSWORD_VALIDATORS` I've decided to accept these as an exception to the validator
 
 + pep8 linter in VSCode
 
@@ -798,6 +799,8 @@ All Imagery and PDFs provided by resources on the [SARNA Battletech Wiki](https:
 I would like to acknowledge the following people & orginisations that helped me along the way in completing this project:
 
 Ed Bradly - for his insights into django, and being a person to bounce technical isdes off of.
+
+Roman Rakic - for his readme template, it really helped to make sure I covered the bases for documentation.
 
 The folks that play the regular campaign - for their feedback and direction on what "we" needed first.
 
