@@ -148,8 +148,8 @@ As a battletech player I need a way to easily navigate around the site so that I
 ***
 ### Colours
 The Color pallet was created using [Coolors.co](https://coolors.co/) based off of the colours identified in the landing page's hero image.
-<details><summary>See colour pallet</summary>
-<img src="docs/images/-palete.png">
+<details><summary>See colour palette</summary>
+<img src="docs/images/color-palette.png">
 </details>
 
 ### Fonts
