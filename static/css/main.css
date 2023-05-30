@@ -11,7 +11,7 @@
 body {
     background-color: var(--color-brown);
     color: var(--color-text);
-    background: url('../images/hero/2019-battletech-4k_1547938494.jpg') no-repeat center center var(--color-white);
+    background: url('../images/hero/2019-battletech-4k.jpg') no-repeat center center var(--color-white);
 }
 
 footer {
