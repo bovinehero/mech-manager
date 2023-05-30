@@ -479,7 +479,7 @@ main.css [results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F
 Threw one error of undefined variable `bootstrap`, this is not an issue as the variable is defined in the bootstrap import on the __base.html__ template
 
 <details><summary>403/404/500 Error handler - No Errors Found</summary>
-<img src="docs/images/error_handle.png" width="800" >
+<img src="docs/images/error-handle.png" width="800" >
 </details>
 
 ### Python
@@ -517,15 +517,15 @@ TODO
 </details>
 
 <details><summary>mech_delete.html</summary>
-<img src="docs/images/lh-mech_delete.png" width="800">
+<img src="docs/images/lh-mech-delete.png" width="800">
 </details>
 
 <details><summary>mech_detail.html</summary>
-<img src="docs/images/lh-mech_detail.png" width="800">
+<img src="docs/images/lh-mech-detail.png" width="800">
 </details>
 
 <details><summary>mechs_form.html</summary>
-<img src="docs/images/lh-mechs_form.png" width="800">
+<img src="docs/images/lh-mechs-form.png" width="800">
 </details>
 
 <details><summary>mechs.html</summary>
@@ -533,7 +533,7 @@ TODO
 </details>
 
 <details><summary>new_mechs_form.html</summary>
-<img src="docs/images/lh-new_mechs_form.png" width="800">
+<img src="docs/images/lh-new-mechs-form.png" width="800">
 </details>
 
 ### Wave
@@ -545,17 +545,17 @@ Urls behind auth were tested via the WAVE [plugin](https://chrome.google.com/web
 
 
 <details><summary>mech_delete.html</summary>
-<img src="docs/images/wave-mech_delete.png" width="800">
+<img src="docs/images/wave-mech-delete.png" width="800">
 </details>
 
 <details><summary>mech_detail.html</summary>
-<img src="docs/images/wave-mech_detail.png" width="800">
+<img src="docs/images/wave-mech-detail.png" width="800">
 </details>
 
 Contrast error due to default bootstrap theme on "available" pill - accepted as this is vanilla bootstrap theme.
 
 <details><summary>mechs_form.html</summary>
-<img src="docs/images/wave-mechs_form..png" width="800">
+<img src="docs/images/wave-mechs-form..png" width="800">
 </details>
 
 <details><summary>mechs.html</summary>
@@ -563,7 +563,7 @@ Contrast error due to default bootstrap theme on "available" pill - accepted as 
 </details>
 
 <details><summary>new_mechs_form.html</summary>
-<img src="docs/images/wave-new_mechs_form.png" width="800">
+<img src="docs/images/wave-new-mechs-form.png" width="800">
 </details>
 
 Alerts were due to 
@@ -571,7 +571,7 @@ Alerts were due to
 2. pdf downloads being untestable - accepted as these are third party
 
 <details><summary>new_mechs_form.html</summary>
-<img src="docs/images/wave-new_mechs_form.png" width="800">
+<img src="docs/images/wave-new-mechs-form.png" width="800">
 </details>
 
 
