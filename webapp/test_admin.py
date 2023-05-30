@@ -7,6 +7,7 @@ from .admin import MechAdmin
 class MockRequest(object):
     pass
 
+
 request = MockRequest()
 
 

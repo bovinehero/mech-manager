@@ -12,7 +12,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 DEBUG = False
 
-ALLOWED_HOSTS = ["bhero-battletech-inventory.herokuapp.com", "localhost", "127.0.0.1"]
+ALLOWED_HOSTS = [
+    "bhero-battletech-inventory.herokuapp.com",
+    "localhost",
+    "127.0.0.1"
+    ]
 CORS_ALLOWED_ORIGINS = ['https://bhero-battletech-inventory.herokuapp.com']
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 
@@ -80,6 +84,12 @@ DATABASES = {
         'default': dj_database_url.parse(os.environ.get("DATABASE_URL")),
 }
 
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+    }
+}
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -103,8 +113,8 @@ USE_L10N = True
 USE_TZ = True
 
 STATIC_URL = os.path.join(BASE_DIR, "staticfiles/")
-STATIC_ROOT =  os.path.join(BASE_DIR, "staticfiles")
-STATICFILES_DIRS =  [os.path.join(BASE_DIR, "static"),]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"), ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 

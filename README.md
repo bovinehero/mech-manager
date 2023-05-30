@@ -44,7 +44,7 @@
 
 9. [Bugs](#bugs)
 
-10. [Deployment](#deployment)
+10. [Deployment and Development Setup](#deployment-and-development-setup)
     1. [Heroku](#heroku)
     2. [Forking GitHub Repo](#forking-the-github-repository)
     3. [Clone a GitHub Repo](#clone-a-github-repository)
@@ -147,36 +147,29 @@ As a battletech player I need a way to easily navigate around the site so that I
 ## Design
 ***
 ### Colours
-> blurb about colours
 The Color pallet was created using [Coolors.co](https://coolors.co/) based off of the colours identified in the landing page's hero image.
 <details><summary>See colour pallet</summary>
 <img src="docs/images/color_palete.png">
 </details>
 
 ### Fonts
-> blurb about fonts
-<details><summary>See Rubik font</summary>
-<img src="docs/images/fonts.png">
-</details>
 
+For this project I've elected to utilise the standard Bootstrap typography.
 
 ## Project Structure 
 
 #### Web app  pages
-> blurb about over all
+A Clean, light theme with emphasis on shades of brown anf yellow was used troughout entire project. In addition the use of responsive and simple navigation allows th users to easily traverse the site.
 
-#### sections:
-1. Home page
-2. Auth Forms
-3. List View
-4. Detail Page
-5. Edit Page
-6. Create Page
-7. Delete Page
-8. 404/403 Page
-
-
-
+#### Sections:
+1. Home page: Landing page for the site, contains animated hero image links out to both board and video game retailers as well as an image carousel of the available mechs
+2. Auth Forms: Form control for log in, logout, reset/forgot password and register accounts
+3. Mech List View: 3 coloumn responsive table with 2 views depending on authorisation level. Read only view allows registered users to examine all the mechs in the dB and dives into greater detail. PDF downloads of record sheets are available. Commander level accounts have access to an activation toggle and can delete/edit records from an actions dropdown.
+4. Detail Page: This allows users to view all the game level information, and if the mech is active a view into the record sheet. Commander level accounts are also provided links to Edit and Delete the selected Mech. 
+5. Edit Page: Commander level accounts can edit exisiting mech records here
+6. Create Page: Commander level accounts can create new mech records here
+7. Delete Page: Commander level accounts can delete exisiting mech records here
+8. 403/404/500 Pages: Custom error pages for the application should the redirections fail or the app experience an irrecoverable fault.  
 
 ### Code structure
 Project code structure is organized and divided into a core app and a webapp app.
@@ -204,11 +197,22 @@ Project code structure is organized and divided into a core app and a webapp app
 
 ## Database
 ***
-<details><summary>(ERD)Physical database model</summary>
-<img src="docs/images/db.png">
+For this project I used PostgreSQL for the relational database management system.
+
+In the initial stages of the design I'd envisioned managing the mechs on a by pilot basis. Indeed the first PoC app developed inthe [battletech-inventory repo](https://github.com/bovinehero/battletech-inventory) included plans to manage the Mech "Entity" as part of a related pilot:
+
+<details><summary>Original (ERD)Physical Database Model</summary>
+<img src="docs/images/battletech-db-relationships.png">
 </details>
 
-- For this Django app I've used PostgreSQL relational database management system.
+As part of the work I created a specific [branch](https://github.com/bovinehero/battletech-inventory/tree/read-all-the-things) to build the PoC code around 
+
+I then toyed with the idea of 
+
+<details><summary>Second Iteration Database Model</summary>
+<img src="battletech-db-relationships2.png">
+</details>
+
 - The model showed on the diagram visually represents the structure of a PostgreSQL database, including tables, columns, relationships, and constraints, that is actually stored in the database itself.
 
 ### Custom Data Models
@@ -236,6 +240,7 @@ The Mech Model represents a programitical version of an available minature that 
 
 ### Wireframes
 
+TODO
 <details><summary>Home page</summary>
 <img src="docs/images/wireframe-home-page.png">
 <img src="docs/images/med-wireframe-home-page.png">
@@ -360,7 +365,6 @@ This allows us to work towards an easy way to implement improvements via Continu
 ##### Back to [top](#table-of-contents)    
 ***
 
-
 ## Technologies Used
 
 ### Languages & Frameworks
@@ -384,16 +388,20 @@ This allows us to work towards an easy way to implement improvements via Continu
 - [Git](https://git-scm.com/) was used for version control within VSCode to push the code to GitHub
 - [GitHub](https://github.com/) was used as a remote repository to store project code
 - [Google Fonts](https://fonts.google.com/) - for typography in project
-
-- crispy-forms
-- whitenoise
-- postgres
-- allauth
-- sendgrid
+- [crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/) for the basis of bootstrap styled django forms
+- [whitenoise](https://whitenoise.readthedocs.io/en/latest/) to deal with staticfiles as my cloudinary implementaion did not work as planned
+- [postgres15](https://www.postgresql.org/) was used for testing dB models options and compiling the dB dependencies.
+- [ElephantSQL](https://customer.elephantsql.com/instance) for hosting the production dB
+- [allauth](https://django-allauth.readthedocs.io/en/latest/) for handling all the auth 
+- [Sendgrid](https://sendgrid.com/) to allow the app to communicate to users via email
+- [Heroku](https://dashboard.heroku.com/apps) for hosting the application
 
 ## Features
 
 ***
+
+TODO
+
 ### Feature N
 
 Description:
@@ -418,16 +426,16 @@ Manual Testing
 For further releases of this web, there is a plan to implement new and improve
 some of the existing features
 
-1. Image Upload
-2. User validation
-3. Commander Invitations
-4. Pilot Manager
+1. Image Upload: I had difficulty getting cloudinary working and was unable to develop a mech profile picture or recordsheet upload, this feature would mean that users would no longer rely on the site owner providing these assets via releases.
+2. User validation: Currently users can sign up via email, it would be good if the users had to provide MFA and activate accounts via email prioir to accessing the site.
+3. Commander Invitations: Commander level access is only available via backend edits to user accounts. This is primarily due to the lack of user validation as currently it is a risk to allow newly registered users full CRUD access to the site without a vetting system.
+4. Campain Manager: Include options for mutiple caompains to run from the same inventory
+5. Inventory / Order system: Include options for multiple inventories and stock management.
 
 ##### Back to [top](#table-of-contents)
 
 ## Validation:
 ***
-
 
 ### Html
 [WC3 Validator](https://validator.w3.org/) was used to validate the html in the project. 
@@ -479,9 +487,20 @@ Threw one error of undefined variable `bootstrap`, this is not an issue as the v
 ### Python
 + [CI Python Linter](https://pep8ci.herokuapp.com/) to check  Python code for validity and conventions
 
+
+settings.py
++ 96: E501 line too long (91 > 79 characters)
++ 99: E501 line too long (81 > 79 characters)
++ 102: E501 line too long (82 > 79 characters)
++ 105: E501 line too long (83 > 79 characters)
+
 + pep8 linter in VSCode
 
+
+
 ### Lighthouse
+
+TODO
 
 + [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for performance, accessibility, progressive web apps, SEO analysis of the project code here are the results:
 
@@ -570,15 +589,23 @@ DATABASES = {
 }
 ```
 
+the Django test suite can then be executed via:
 
 ``` sh
 coverage run --source=webapp manage.py test
 ```
 
+The unnitest suite shows 100% testing coverage via:
 
+``` sh
+coverage report
+```
 
+![100% Coverage](docs/images/coverage.png)
 
 ### Testing User Stories
+
+TODO
 
 1. User Story
 
@@ -587,57 +614,195 @@ coverage run --source=webapp manage.py test
 | reference feature above | What to do | What should happen  | Works as expected |
 
 
-
-
-
 ## Bugs
 ***
+TODO
 Following Bugs are found during the development of this project
 
 1. Bug 1
 2. Bug 2
 3. Bug 3
 
-## Deployment
+## Deployment and Development Setup
 ***
 
+### Development ENV Setup
+
+The app development documentation assumes a local setyp on a UNIX like system,while untested development on windows should be supported provided you adapt the process for a windows system.
+
+We use a local install of postgresql for new dB development to avoid breaking upstream development and prod envs. 
+
+Postgresql is available [here](https://www.postgresql.org/download/)
+We are using version 15 to align with the current prod db version.
+
+In order to promote env isolation we use __virtualenv__ to create a unique python env for this application.
+
+__virtualenv__ is available [here](https://pypi.org/project/virtualenv/) if you do not have it installed.
+
+#### First time setup
+
+Clone the repo:
+
+``` sh
+git clone git@github.com:bovinehero/battletech-inventory.git
+```
+
+Create a __Python 3.9.6__ environment
+
+``` sh
+cd battletech-inventory
+python3 -m virtualenv --python=python3.9.6 .venv
+```
+
+Activate the environment
+
+``` sh
+source .venv/bin/activate
+```
+
+The requirements.txt specifies __psycopg2__ as a dependency. When installing on certain environments psycopg2 needs the posgresql __pg_config__ in it's PATH, so either make sure to add it to your venv or export it prior to installing the requirments.
+Example for MacBook on the PostgreSQL default install location:
+
+``` sh
+export PATH=/Library/PostgreSQL/15/bin/:$PATH
+```
+
+Missing this step will cause the pip execution to fail if the binary can't be found. 
+
+Install the app dependencies
+
+``` sh
+pip install -r requirements.txt
+```
+
+### Local sqlite3 db and env.py setup
+
+Provided you have a dev environment set up as below the following can be used to set up a new local dB __db.sqlite3__ for the web app:
+
+``` sh
+python manage.py migrate
+python manage.py createsuperuser
+```
+
+The convention for the repo is to use an __env.py__ at the repository root to manage the env variables when using a full install
+
+``` py
+import os
+
+# env variables
+os.environ["DATABASE_URL"] = ''
+os.environ["SECRET_KEY"] = ''
+os.environ["CLOUDINARY_URL"] = ''
+os.environ["SENDGRID_API_KEY"] = ''
+os.environ["FROM_EMAIL"] = ''
+
+# local db superuser and pass
+super_user = ''
+super_pass = ''
+```
+
+When deployed on a managed compute platform (like heroku) use ENV variables injected into the container creation process during the deployment/provisioning.
+
+Performing the above actions creates the basic file structure used in the repo and gives us a local sqlite dB to play with.
+
+The variables and their usage is described in the __Heroku Deployment__ section below
+
+the __db.sqlite3__ file is not contained in the downloadable repo, it will need to be re-created manually.
+
+
+``` sh
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+```
+
+#### Secret Key Gen
+
+The default secret key for Django is insecure, to create a new one for __env.py__ run the following in your venv:
+
+``` sh
+python manage.py shell
+```
+
+Import the django secrets module and create a new key:
+
+``` py
+from django.core.management.utils import get_random_secret_key
+print(get_random_secret_key())
+```
+
+Paste the result in your __env.py__ file like so:
+
+``` py
+os.environ["SECRET_KEY"] = 'django-example-^)3iq0)e@#$25%$e_8l_e5(rj&szl=f(jq^m628yx+k2_lcp27'
+```
 
 ### Heroku Deployment
 
+Full refernce docs for heroku are [here](https://devcenter.heroku.com/categories/reference)
 
-### Forking the GitHub Repository
+The main noticible configuration component is the env vars to towit the Heroku environment requires the following settings copied from the local __env.py__ file:
 
+__DATABASE_URL__ = `postgres://<username>:<password>@<db_url>/<namespace>`
+I am using a free tier ElephantSQL for the solution, however any posgres solution could be used as an alternative. Postgres 15 has been tested locally and should work with the application.
 
-### Clone a GitHub Repo
+__SECRET_KEY__ = created as per the Secret Key Gen process above __SHOULD BE DIFFERNET KEY FROM LOCAL ENV__
 
+__CLOUDINARY_URL__ = `cloudinary://<user id>:<password>@d<namespace>` Not strictly required as the solution leverages whitenoise for static files, however for future enhancements involving recordsheet and image uploads a CDN solution will be required.
+
+__SENDGRID_API_KEY__ = Provided by sendgrid for use in app to user communication.
+
+__FROM_EMAIL__ = The email address all coms FROM the app will be sent from, used with SENDGRID.
+
+In addition heroku needs a __PORT__ = 8000 variable set to provide the service.
+
+Deployments are set up to run manually from the main branch, logging into heroku and selecting deploy branch should start a build
+
+### How to Fork
+To fork this repository:
+
+1. Go to the repository for this project.
+2. Click the Fork button in the top right corner.
+
+### How to Clone
+To clone this repository:
+
+1. Go to the repository for this project.
+2. Click on the code button, select whether you would like to clone with HTTPS, SSH or GitHub CLI and copy the link shown.
+3. Open the terminal in your code editor and change the current working directory to the location you want to use for the cloned directory.
+4. Type 'git clone' into the terminal and then paste the link you copied in step 3. Press enter.
 
 ## Credits
 
 ### Code
 
+While all (re)used code is credited inline I'd like to acknowledge the following sites for inspiration outside of the official docs for each library/framework used.
 
-
+1. [W3 Schools](https://www.w3schools.com/)
+2. [Mozilla mdn_ docs](https://developer.mozilla.org/en-US/)
+ 
 ### Tutorials 
 
+The Code Institute __Hello Django__ and __I Think Therefore I Blog__ tutorials both provided fantastic insight into how to build, test and deploy this application.
 
+[Web Forefront](https://www.webforefront.com/django/permissionchecks.html) was a great supplementary resource for django permissions managment
 
 ### Imagery
 
-
-
+All Imagery and PDFs provided by resources on the [SARNA Battletech Wiki](https://www.sarna.net/) under GFDL license
 
 ## Acknowledgements
 
 ***
 
+I would like to acknowledge the following people & orginisations that helped me along the way in completing this project:
 
+Ed Bradly - for his insights into django, and being a person to bounce technical isdes off of.
 
+The folks that play the regular campaign - for their feedback and direction on what "we" needed first.
 
+Mo Shami - for being the mentor that set me on the right path and provided me with mid and final feedback prioir to submission.
 
+[Catalyst Game Labs](https://www.catalystgamelabs.com/brands/battletech) for the record sheets (hosted on SARNA) and fro bringing back Battletech.
 
-
-
-
-
-
-https://www.webforefront.com/django/permissionchecks.html
+[SARNA Battletech Wiki](https://www.sarna.net/) for being such an awesome resource for information and content for the dB.

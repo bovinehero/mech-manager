@@ -1,6 +1,7 @@
 from django.test import TestCase
 from .models import Mech, TECH, ROLE, CLASSIFICATION, WEIGHTS, STATUS
 
+
 class TestModels(TestCase):
 
     def test_mech_defaults(self):

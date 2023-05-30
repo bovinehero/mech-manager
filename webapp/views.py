@@ -3,7 +3,9 @@ from django.urls import reverse_lazy
 from django.views import generic
 from django.views.generic.edit import CreateView, DeleteView, UpdateView
 from django.contrib import messages
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.auth.mixins import (
+    LoginRequiredMixin, PermissionRequiredMixin
+)
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.decorators import permission_required
 
@@ -18,12 +20,14 @@ class CardList(generic.ListView):
     template_name = 'index.html'
     paginate_by = 10
 
+
 class MechList(LoginRequiredMixin, generic.ListView):
     login_url = "/accounts/login/"
     model = Mech
     queryset = Mech.objects.all().order_by('name')
     template_name = 'mechs.html'
     paginate_by = 10
+
 
 class MechDetail(LoginRequiredMixin, generic.ListView):
     login_url = "/accounts/login/"
@@ -39,32 +43,35 @@ class MechDetail(LoginRequiredMixin, generic.ListView):
             },
         )
 
-class CreateMechView(PermissionRequiredMixin, LoginRequiredMixin, generic.CreateView):
+
+class CreateMechView(PermissionRequiredMixin,
+                     LoginRequiredMixin, generic.CreateView):
     permission_required = "webapp.add_mech"
     login_url = "/accounts/login/"
     model = Mech
     form_class = CreateMechForm
-    template_name = 'new_mechs_form.html'    
+    template_name = 'new_mechs_form.html'
     success_url = reverse_lazy('mechs')
 
     def form_valid(self, form):
         messages.success(self.request, "The Mech was successfully created.")
-        return super(CreateMechView,self).form_valid(form)
+        return super(CreateMechView, self).form_valid(form)
+
 
 class UpdateMechView(PermissionRequiredMixin, LoginRequiredMixin, UpdateView):
     permission_required = "webapp.change_mech"
     login_url = "/accounts/login/"
     model = Mech
     form_class = UpdateMechForm
-    template_name = 'mechs_form.html'    
+    template_name = 'mechs_form.html'
 
     def get_success_url(self):
         return reverse('mech_detail', kwargs={'slug': self.object.slug})
 
-
     def form_valid(self, form):
         messages.success(self.request, "The Mech was successfully updated.")
-        return super(UpdateMechView,self).form_valid(form)
+        return super(UpdateMechView, self).form_valid(form)
+
 
 class DeleteMechView(PermissionRequiredMixin, LoginRequiredMixin, DeleteView):
     permission_required = "webapp.delete_mech"
@@ -77,7 +84,8 @@ class DeleteMechView(PermissionRequiredMixin, LoginRequiredMixin, DeleteView):
     def delete(self, request, *args, **kwargs):
         messages.success(self.request, "The Mech was successfully deleted.")
         return super(DeleteMechView, self).delete(request, *args, **kwargs)
-    
+
+
 @login_required
 @permission_required("webapp.change_mech", raise_exception=True)
 def toggle_mech_status(request, slug):
@@ -89,11 +97,14 @@ def toggle_mech_status(request, slug):
     mech.save()
     return redirect('mechs')
 
+
 def error_404(request, exception):
     return render(request, '404.html', status=404)
 
+
 def error_403(request, exception):
     return render(request, '403.html', status=403)
+
 
 def error_500(request):
     return render(request, '500.html', status=500)

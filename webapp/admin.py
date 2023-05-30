@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Mech
 
+
 @admin.register(Mech)
 class MechAdmin(admin.ModelAdmin):
     list_display = (
@@ -13,7 +14,7 @@ class MechAdmin(admin.ModelAdmin):
         'battle_value',
         'status',
         'image'
-        ) 
+    )
     search_fields = ['type', 'tech_level']
     list_filter = ('tech_level', )
     actions = ['approve_mech', 'revoke_mech']
@@ -21,6 +22,6 @@ class MechAdmin(admin.ModelAdmin):
 
     def approve_mech(self, request, queryset):
         queryset.update(status=True)
-    
+   
     def revoke_mech(self, request, queryset):
         queryset.update(status=False)
