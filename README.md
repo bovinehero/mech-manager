@@ -213,7 +213,11 @@ I then toyed with the idea of
 <img src="docs/images/battletech-db-relationships2.png">
 </details>
 
-- The model showed on the diagram visually represents the structure of a PostgreSQL database, including tables, columns, relationships, and constraints, that is actually stored in the database itself.
+However, when I began to develop the application it became apparent that the only model that actually mattered for dealing with the primary usecase at the games club was the mechs Model, so I created one single table dB.
+
+<details><summary>Second Iteration Database Model</summary>
+<img src="battletech-db-relationship-final.png">
+</details>
 
 ### Custom Data Models
 
@@ -235,6 +239,28 @@ I then toyed with the idea of
 
 
 The Mech Model represents a programitical version of an available minature that any club memeber can use. 
+
+The options are as follows:
+
+``` py
+TECH = ((0, 'Inner Sphere'), (1, 'Clan'), (2, 'Prototype'))
+ROLE = (
+    (0, 'Ambusher'), (1, 'Brawler'), (2, 'Juggernaut'),
+    (3, 'Missle Boat'), (4, 'Scout'), (5, "Skirmisher"),
+    (6, 'Sniper'), (7, 'Striker')
+)
+CLASSIFICATION = ((0, 'Light'), (1, 'Medium'), (2, 'Heavy'), (3, 'Assault'))
+WEIGHTS = (
+    (0, '20 Ton'), (1, '25 Ton'), (2, '30 Ton'), (3, '35 Ton'),
+    (4, '40 Ton'), (5, '45 Ton'), (6, '50 Ton'), (7, '55 Ton'),
+    (8, '60 Ton'), (9, '65 Ton'), (10, '70 Ton'), (11, '75 Ton'),
+    (12, '80 Ton'), (13, '85 Ton'), (14, '90 Ton'), (15, '95 Ton'),
+    (16, '100 Ton')
+)
+STATUS = ((0, "Not Available"), (1, "Available"))
+```
+
+In a future iteration, the options could be ported to relational tables within the dB. However I ran out of time before I could re-devlop this.
 
 ##### Back to [top](#table-of-contents) 
 
