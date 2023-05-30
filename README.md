@@ -400,7 +400,17 @@ This allows us to work towards an easy way to implement improvements via Continu
 
 ***
 
-TODO
+1. [Setup Heroku](https://github.com/bovinehero/battletech-inventory/issues/2): As a Developer I need a remote hosting solution for the application so that build and test on a prod-like env.
+2. [Setup CMS](https://github.com/bovinehero/battletech-inventory/issues/3): As a Developer I need a remote CMS to host static content for the application so that build and test on a prodlike env.
+3. [Setup Remote dB](https://github.com/bovinehero/battletech-inventory/issues/4): As a Developer I need a remote db to facilitate as a preprod/prod environment so that build and test on a prodlike env.
+4. [Django Base Setup](https://github.com/bovinehero/battletech-inventory/issues/5): As a developer I need my base django dev env configured so that I can begin devlopement - this story leveraged work I'd already completed in setting up the Django Starter [repo](https://github.com/bovinehero/django-starter)
+5. [Admin app setup](https://github.com/bovinehero/battletech-inventory/issues/8): As a site admin I need a basic admin panel setup so that perform admin functions and see visible results of models.
+6. [Create Read Functionality on Pilots and Mechs](https://github.com/bovinehero/battletech-inventory/issues/11): As a battletech player I need a way to fetch information about pilots and mechs so that I can see which units are available for the campaign.
+7. [Implement Update Functionality on Pilots and Mechs](https://github.com/bovinehero/battletech-inventory/issues/12): As a battletech player I need a way to edit information about my pilots and mechs so that I can change the pilot and mech details as the campaign progresses.
+8. [Implement Create/Delete new Pilot and Mech functionality](https://github.com/bovinehero/battletech-inventory/issues/13): As a battletech GM I need a way to create/delete pilots and mechs so that as the campaign progresses I can recruit new pilots and mechs.
+9. [Setup frontend](https://github.com/bovinehero/battletech-inventory/issues/14):
+As a battletech player I need a way to easily navigate around the site so that I can interact with pilot and mech details.
+
 
 ### Feature N
 
@@ -508,9 +518,7 @@ __manage.py__
 
 ### Lighthouse
 
-TODO
-
-+ [Lighthouse](https://developers.google.com/web/tools/lighthouse/) for performance, accessibility, progressive web apps, SEO analysis of the project code here are the results:
+[Lighthouse](https://developers.google.com/web/tools/lighthouse/) for performance, accessibility, progressive web apps, SEO analysis of the project code here are the results:
 
 <details><summary>index.html</summary>
 <img src="docs/images/lh-index.png" width="800">
@@ -535,6 +543,20 @@ TODO
 <details><summary>new_mechs_form.html</summary>
 <img src="docs/images/lh-new-mechs-form.png" width="800">
 </details>
+
+#### Issue Summary
+
+4 main Performance issues on the site:
++ Preload Largest Contentful Paint image: This isn't estimated to add a significant increase, potentially nice to have addition in future. Mechs
++ Image elements do not have explicit width and height: All images used are the static dimensions, thus explicit width and height are not strictly required.
++ Serve static assets with an efficient cache policy: static components are managed by whitenoise plugin, so they run on the container. I was unable to reliably utilise Cloudinary. The Future enhancement Image Upload would require caching to be an effictient solution and would address this.
++ Page prevented back/forward cache restoration: Dev Tools suggest this is non actionable
+
+1 main Accessibility issue:
++ Background and foreground colors do not have a sufficient contrast ratio: Issue picked up in text pre-animation in the banner message. False Positive.
+
+1 main Best Practice issue:
++ Issue Logged to Issues Console: The User Agent usage from popper.js raises an Informational issue. This is a 3rd party issue, I will not fix this.
 
 ### Wave
 The WAVE WebAIM web accessibility evaluation tool was used to ensure the website met high accessibility standards.
