@@ -469,8 +469,6 @@ Urls behind auth were tested via text input on the Nu HTML Checker
 [Jigsaw W3 Validator](https://jigsaw.w3.org/css-validator/)was used  to validate the css in the project. 
 main.css [results](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fbhero-battletech-inventory.herokuapp.com%2Fapp%2Fstaticfiles%2Fcss%2Fmain.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) - No Error Found.
 
-
-
 ### Javascript
 [JShint](https://jshint.com/) was used to validate custom scripts included in the templates. 
 
@@ -495,9 +493,18 @@ settings.py returned the following errors:
 
 As these are django generated values for `AUTH_PASSWORD_VALIDATORS` I've decided to accept these as an exception to the validator
 
-+ pep8 linter in VSCode
+pylint in VSCode produced a handful of problems
 
+![Pylint Coverage](docs/images/pylint.png)
 
+__test_admin.py__
++ Unnecessary pass statement: Accepted as empty class used to generate mock request
+
+__views.py__
++ Various Unused Arguemets: Actually used by web app when instanciated - False trigger
+
+__manage.py__
++ Import outside toplevel: Django generated file, 3rd party issue.
 
 ### Lighthouse
 
@@ -601,8 +608,6 @@ The unnitest suite shows 100% testing coverage via:
 ``` sh
 coverage report
 ```
-
-![100% Coverage](docs/images/coverage.png)
 
 ### Testing User Stories
 
@@ -741,6 +746,16 @@ os.environ["SECRET_KEY"] = 'django-example-^)3iq0)e@#$25%$e_8l_e5(rj&szl=f(jq^m6
 ### Heroku Deployment
 
 Full refernce docs for heroku are [here](https://devcenter.heroku.com/categories/reference)
+
+The heroku env is configured to auto deploy (available in the deploy tab of the heroku app) on a successful merge up to main.
+
+![Heroku Auto Deploy](docs/images/auto-deploy.png)
+
+Should this fail __Disable Automatic Deploys__ via the button above.
+
+Manual Deployments can be triggered below
+
+![Heroku Manual Deploy](manual-deploy.png)
 
 The main noticible configuration component is the env vars to towit the Heroku environment requires the following settings copied from the local __env.py__ file:
 

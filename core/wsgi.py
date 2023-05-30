@@ -8,7 +8,7 @@ https://docs.djangoproject.com/en/3.2/howto/deployment/wsgi/
 """
 
 import os
-# imports occur at runtime, so fail linter
+# django imports occur at runtime, so fail linter
 # pylint:disable=import-error
 from django.core.wsgi import get_wsgi_application
 # pylint:enable=import-error

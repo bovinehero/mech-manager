@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-# imports occur at runtime, so fail linter
+# django imports occur at runtime, so fail linter
 # pylint:disable=import-error
 import dj_database_url
 from django.contrib.messages import constants as messages
@@ -100,6 +100,13 @@ WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
         'default': dj_database_url.parse(os.environ.get("DATABASE_URL")),
+}
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+    }
 }
 
 AUTH_PASSWORD_VALIDATORS = [

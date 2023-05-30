@@ -1,5 +1,10 @@
-from . import views
+""" webapp URL Configuration """
+# django imports occur at runtime, so fail linter
+# pylint:disable=import-error
 from django.urls import path
+# pylint:enable=import-error
+
+from . import views
 
 urlpatterns = [
     path('', views.CardList.as_view(), name='home'),

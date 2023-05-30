@@ -1,6 +1,5 @@
 """ Contains the MVC models for the app """
-
-# imports occur at runtime, so fail linter
+# django imports occur at runtime, so fail linter
 # pylint:disable=import-error
 from django.db import models
 from django.utils.text import slugify

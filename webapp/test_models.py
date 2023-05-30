@@ -1,8 +1,13 @@
+""" Contains the testcases for models.py """
+# django imports occur at runtime, so fail linter
+# pylint:disable=import-error
 from django.test import TestCase
-from .models import Mech, TECH, ROLE, CLASSIFICATION, WEIGHTS, STATUS
+# pylint:enable=import-error
+from .models import Mech
 
 
 class TestModels(TestCase):
+    """ Class used to manage admin test cases """
 
     def test_mech_defaults(self):
         """ Test to check new Mech Defaults are set correctly """
