@@ -406,25 +406,82 @@ This allows us to work towards an easy way to implement improvements via Continu
 ## Features
 
 ***
+
 TODO
 
-1. [Setup Heroku](https://github.com/bovinehero/battletech-inventory/issues/2): As a Developer I need a remote hosting solution for the application so that build and test on a prod-like env.
-2. [Setup CMS](https://github.com/bovinehero/battletech-inventory/issues/3): As a Developer I need a remote CMS to host static content for the application so that build and test on a prodlike env.
-3. [Setup Remote dB](https://github.com/bovinehero/battletech-inventory/issues/4): As a Developer I need a remote db to facilitate as a preprod/prod environment so that build and test on a prodlike env.
-4. [Django Base Setup](https://github.com/bovinehero/battletech-inventory/issues/5): As a developer I need my base django dev env configured so that I can begin devlopement - this story leveraged work I'd already completed in setting up the Django Starter [repo](https://github.com/bovinehero/django-starter)
-5. [Admin app setup](https://github.com/bovinehero/battletech-inventory/issues/8): As a site admin I need a basic admin panel setup so that perform admin functions and see visible results of models.
-6. [Create Read Functionality on Pilots and Mechs](https://github.com/bovinehero/battletech-inventory/issues/11): As a battletech player I need a way to fetch information about pilots and mechs so that I can see which units are available for the campaign.
-7. [Implement Update Functionality on Pilots and Mechs](https://github.com/bovinehero/battletech-inventory/issues/12): As a battletech player I need a way to edit information about my pilots and mechs so that I can change the pilot and mech details as the campaign progresses.
-8. [Implement Create/Delete new Pilot and Mech functionality](https://github.com/bovinehero/battletech-inventory/issues/13): As a battletech GM I need a way to create/delete pilots and mechs so that as the campaign progresses I can recruit new pilots and mechs.
-9. [Setup frontend](https://github.com/bovinehero/battletech-inventory/issues/14):
-As a battletech player I need a way to easily navigate around the site so that I can interact with pilot and mech details.
+### Admin Backend
+
+#### User Management
+
+__Description:__  The standard django admin panel at the backend contains useful features for managing user accounts. In our case any user that registers for an account is given the default of no additional permissions.
+
+User accounts can be promoted to Commander either by assigning the commander user group or the following permissions:
+
++ webapp | mech | Can add mech
++ webapp | mech | Can change mech
++ webapp | mech | Can delete mech
++ webapp | mech | Can view mech
+
+In order to protect the content Commander class users can ONLY be created in this fashion. Only Commander class or higher users can perform Delete, Edit and Create actions in the front end.
+
+<details><summary>See Feature Screen Shots</summary>
+
+Django Backend User Management - Image removed as it contains usernames.
+
+Django Backend User Permissions
+
+![Screenshot](docs/images/feature-user-perms.png)
+
+Django Backend User Group
+
+![Screenshot](docs/images/feature-user-groups.png)
+
+</details>
+
+__User Stories In Feature:__  
+    Epic: 
+    Story 1: What Tasks?
+
+#### Mech Management
+
+__Description:__  The Mech model is imported into the standard django admin panel to allow site admin fixes for issues and also to include administrativley edit records with refences to new mech profile images and record sheet pdfs as they are released. Currently this functionality is unavalable due to the app's inability to manage file uploads on the front end.
+
+<details><summary>See Feature Screen Shots</summary>
+
+Django Backend Mech List
+
+![Screenshot](docs/images/feature-user-perms.png)
+
+Django Backend Mech Edit
+
+![Screenshot](docs/images/feature-user-groups.png)
+
+</details>
+
+__User Stories In Feature:__  
+    Epic: 
+    Story 1: What Tasks?
+
+### Index Page
+
+#### User Management
+
+__Description:__  
+
+<details><summary>See Feature Screen Shots</summary>
+
+![Screenshot](docs/images/feature-hero-image.png)
+
+</details>
+
+__User Stories In Feature:__  
+    Epic: 
+    Story 1: What Tasks?
 
 
-### Feature N
+#### Hero Image
 
-Description:
-
-User Stories In Feature:
+__Description:__  
 
 <details><summary>See Feature Screen Shots</summary>
 
@@ -432,12 +489,139 @@ User Stories In Feature:
 
 </details>
 
-Manual Testing
-<details><summary>See Testing Results</summary>
+__User Stories In Feature:__  
+    Epic: 
+    Story 1: What Tasks?
 
-![Screenshot](docs/images/feature-testing.gif)
+#### Board Game Link
+
+__Description:__  
+
+<details><summary>See Feature Screen Shots</summary>
+
+![Screenshot](docs/images/feature-screenshot.png)
 
 </details>
+
+__User Stories In Feature:__  
+    Epic: 
+    Story 1: What Tasks?
+
+#### Video Game Link
+
+__Description:__  
+
+<details><summary>See Feature Screen Shots</summary>
+
+![Screenshot](docs/images/feature-screenshot.png)
+
+</details>
+
+__User Stories In Feature:__  
+    Epic: 
+    Story 1: What Tasks?
+
+#### Available Mechs Carousel
+
+__Description:__  
+
+<details><summary>See Feature Screen Shots</summary>
+
+![Screenshot](docs/images/feature-screenshot.png)
+
+</details>
+
+__User Stories In Feature:__  
+    Epic: 
+    Story 1: What Tasks?
+
+### List of Mechs Page
+
+#### Add New Mech
+
+__Description:__  
+
+<details><summary>See Feature Screen Shots</summary>
+
+![Screenshot](docs/images/feature-screenshot.png)
+
+</details>
+
+__User Stories In Feature:__  
+    Epic: 
+    Story 1: What Tasks?
+
+#### Quick Actions Dropdown
+
+__Description:__  
+
+<details><summary>See Feature Screen Shots</summary>
+
+![Screenshot](docs/images/feature-screenshot.png)
+
+</details>
+
+__User Stories In Feature:__  
+    Epic: 
+    Story 1: What Tasks?
+
+#### Availability Status / Toggle
+
+__Description:__  
+
+<details><summary>See Feature Screen Shots</summary>
+
+![Screenshot](docs/images/feature-screenshot.png)
+
+</details>
+
+__User Stories In Feature:__  
+    Epic: 
+    Story 1: What Tasks?
+
+### List of Mechs Page
+
+#### Record Sheets Iframe Reviewer
+
+__Description:__  
+
+<details><summary>See Feature Screen Shots</summary>
+
+![Screenshot](docs/images/feature-screenshot.png)
+
+</details>
+
+__User Stories In Feature:__  
+    Epic: 
+    Story 1: What Tasks?
+
+#### Edit Mech
+
+__Description:__  
+
+<details><summary>See Feature Screen Shots</summary>
+
+![Screenshot](docs/images/feature-screenshot.png)
+
+</details>
+
+__User Stories In Feature:__  
+    Epic: 
+    Story 1: What Tasks?
+
+#### Delete Mech
+
+__Description:__  
+
+<details><summary>See Feature Screen Shots</summary>
+
+![Screenshot](docs/images/feature-screenshot.png)
+
+</details>
+
+__User Stories In Feature:__  
+    Epic: 
+    Story 1: What Tasks?
 
 ## Future Features
 ***
@@ -614,7 +798,7 @@ The website was tested on the following browsers:
 1. Google Chrome
 2. Mozilla Firefox
 
-### Testing
+### Django Testing
 
 In order to preserve the prod db, in testing I used a sqlite.db by changing the __DATABASES__ variable in `settings.py` to the following:
 
@@ -643,11 +827,113 @@ coverage report
 
 TODO
 
-1. User Story
+
+1. [Setup Heroku](https://github.com/bovinehero/battletech-inventory/issues/2): As a Developer I need a remote hosting solution for the application so that build and test on a prod-like env.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
 | reference feature above | What to do | What should happen  | Works as expected |
+
+Manual Testing
+<details><summary>See Testing Results</summary>
+
+![Screenshot](docs/images/feature-testing.gif)
+
+</details>
+
+2. [Setup CMS](https://github.com/bovinehero/battletech-inventory/issues/3): As a Developer I need a remote CMS to host static content for the application so that build and test on a prodlike env.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| reference feature above | What to do | What should happen  | Works as expected |
+
+Manual Testing
+<details><summary>See Testing Results</summary>
+
+![Screenshot](docs/images/feature-testing.gif)
+
+</details>
+
+3. [Setup Remote dB](https://github.com/bovinehero/battletech-inventory/issues/4): As a Developer I need a remote db to facilitate as a preprod/prod environment so that build and test on a prodlike env.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| reference feature above | What to do | What should happen  | Works as expected |
+
+Manual Testing
+<details><summary>See Testing Results</summary>
+
+![Screenshot](docs/images/feature-testing.gif)
+
+</details>
+
+4. [Django Base Setup](https://github.com/bovinehero/battletech-inventory/issues/5): As a developer I need my base django dev env configured so that I can begin devlopement - this story leveraged work I'd already completed in setting up the Django Starter [repo](https://github.com/bovinehero/django-starter)
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| reference feature above | What to do | What should happen  | Works as expected |
+
+Manual Testing
+<details><summary>See Testing Results</summary>
+
+![Screenshot](docs/images/feature-testing.gif)
+
+</details>
+
+5. [Admin app setup](https://github.com/bovinehero/battletech-inventory/issues/8): As a site admin I need a basic admin panel setup so that perform admin functions and see visible results of models.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| reference feature above | What to do | What should happen  | Works as expected |
+
+Manual Testing
+<details><summary>See Testing Results</summary>
+
+![Screenshot](docs/images/feature-testing.gif)
+
+</details>
+
+6. [Create Read Functionality on Pilots and Mechs](https://github.com/bovinehero/battletech-inventory/issues/11): As a battletech player I need a way to fetch information about pilots and mechs so that I can see which units are available for the campaign.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| reference feature above | What to do | What should happen  | Works as expected |
+
+Manual Testing
+<details><summary>See Testing Results</summary>
+
+![Screenshot](docs/images/feature-testing.gif)
+
+</details>
+
+7. [Implement Update Functionality on Pilots and Mechs](https://github.com/bovinehero/battletech-inventory/issues/12): As a battletech player I need a way to edit information about my pilots and mechs so that I can change the pilot and mech details as the campaign progresses.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| reference feature above | What to do | What should happen  | Works as expected |
+
+Manual Testing
+<details><summary>See Testing Results</summary>
+
+![Screenshot](docs/images/feature-testing.gif)
+
+</details>
+
+8. [Implement Create/Delete new Pilot and Mech functionality](https://github.com/bovinehero/battletech-inventory/issues/13): As a battletech GM I need a way to create/delete pilots and mechs so that as the campaign progresses I can recruit new pilots and mechs.
+
+| **Feature** | **Action** | **Expected Result** | **Actual Result** |
+|-------------|------------|---------------------|-------------------|
+| reference feature above | What to do | What should happen  | Works as expected |
+
+Manual Testing
+<details><summary>See Testing Results</summary>
+
+![Screenshot](docs/images/feature-testing.gif)
+
+</details>
+
+9. [Setup frontend](https://github.com/bovinehero/battletech-inventory/issues/14):
+As a battletech player I need a way to easily navigate around the site so that I can interact with pilot and mech details.
 
 
 ## Bugs
