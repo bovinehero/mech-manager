@@ -7,12 +7,6 @@
 
 > TODOs: Bugs, manual testing, map features to user stories
 
-+ Design and implement manual and/or automated Python test procedures to assess functionality,usability, responsiveness and data management within the entire web application
-+ Design and implement manual and/or automated JavaScript test procedures to assess functionality,usability, responsiveness and data management within the entire web application
-+ Document all implemented testing in the README.
-+ Commit final code that is free of any passwords or security-sensitive information to the repository and the hosting platform
-+ Ensure that the final deployed code is free of commented out code and has no broken internal links
-+ Ensure that the final deployed code is free of commented out code and has no broken internal links
 
 [View live website](https://bhero-battletech-inventory.herokuapp.com/)
 
@@ -814,86 +808,115 @@ The unnitest suite shows 100% testing coverage via:
 coverage report
 ```
 
+Results of the test can be found int the [docs/htmlcov](docs/htmlcov) Directory
+
 ### Testing User Stories
-
-TODO
-
 
 1. [Setup Heroku](https://github.com/bovinehero/battletech-inventory/issues/2): As a Developer I need a remote hosting solution for the application so that build and test on a prod-like env.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| reference feature above | What to do | What should happen  | Works as expected |
+| Heroku AutoDeploy | Merge/push code to main branch | the site should deploy  | Works as expected |
 
-Manual Testing
-<details><summary>See Testing Results</summary>
+Manual Testing - No Evidence required as Site is hosted  and is a [live website](https://bhero-battletech-inventory.herokuapp.com/) hosted on heroku.
 
-![Screenshot](docs/images/feature-testing.gif)
-
-</details>
 
 2. [Setup CMS](https://github.com/bovinehero/battletech-inventory/issues/3): As a Developer I need a remote CMS to host static content for the application so that build and test on a prodlike env.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| reference feature above | What to do | What should happen  | Works as expected |
+| Cloudinary Staticfiles storage | run `python manage collectstatic -c` when static storage is set to use cloudinary  | django should compile static assets into a specified directory | Fails |
+| Whitenoise Staticfiles storage | run `python manage collectstatic -c` when static storage is set to use local storage  | django should compile static assets into a specified directory | Works as expected |
 
 Manual Testing
 <details><summary>See Testing Results</summary>
 
-![Screenshot](docs/images/feature-testing.gif)
+Cloudinary Staticfiles storage
+
+![Screenshot](docs/images/testing-cms-typerror.png)
+
+Cloudinary Staticfiles storage
+
+![Screenshot](docs/images/testing-cms-works.png)
 
 </details>
+
+Manual Testing - NoEvidence required as Site is hosted on the [live website](https://bhero-battletech-inventory.herokuapp.com/)
 
 3. [Setup Remote dB](https://github.com/bovinehero/battletech-inventory/issues/4): As a Developer I need a remote db to facilitate as a preprod/prod environment so that build and test on a prodlike env.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| reference feature above | What to do | What should happen  | Works as expected |
+| ElephantSQL | Log into ElephantSQL and run sample query | Page should display some content from db  | Works as expected |
+| Register new User | Select Register from Account Options and fill out form | User should be created and presented with the normal user (RO) level access View | Works as expected |
+| Reset User Password | Select Password Reset from Account Options and fill out form  | User should recieve an email (if provided at registeration) with link for password reset | Works as expected |
 
 Manual Testing
 <details><summary>See Testing Results</summary>
 
-![Screenshot](docs/images/feature-testing.gif)
+ElephantSQL
+
+![ElephantSQL](docs/images/testing-db-works.png)
+
+Register new User 
+
+![Register new User](docs/media/testing-sign-up.mov)
+
+Reset User Password - evidence redacted as email address is PII
 
 </details>
 
-4. [Django Base Setup](https://github.com/bovinehero/battletech-inventory/issues/5): As a developer I need my base django dev env configured so that I can begin devlopement - this story leveraged work I'd already completed in setting up the Django Starter [repo](https://github.com/bovinehero/django-starter)
+4. [Django Base Setup](https://github.com/bovinehero/battletech-inventory/issues/5): As a developer I need my base django dev env configured so that I can begin devlopement - this story leveraged work I'd completed in setting up the Django Starter [repo](https://github.com/bovinehero/django-starter)
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| reference feature above | What to do | What should happen  | Works as expected |
+| Project as a whole | Deploy or start site locally using `python manage runserver` | Django site should be visible | Works as expected |
 
-Manual Testing
-<details><summary>See Testing Results</summary>
-
-![Screenshot](docs/images/feature-testing.gif)
-
-</details>
+Manual Testing - No Evidence required as Site is hosted  and is a [live website](https://bhero-battletech-inventory.herokuapp.com/) hosted on heroku.
 
 5. [Admin app setup](https://github.com/bovinehero/battletech-inventory/issues/8): As a site admin I need a basic admin panel setup so that perform admin functions and see visible results of models.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| reference feature above | What to do | What should happen  | Works as expected |
+| Admin User Permissions | Login to Admin Panel, select user perform edit actions | changes should persist  | Works as expected |
+| Backend Mech Status toggle | Login to Admin Panel, select mech(s) perform activate/revoke actions from dropdown | changes should persist  | Works as expected |
+| Backend Mech Create/Edit/Delete | Login to Admin Panel, select mech(s) perform Edit/Create/Delete | changes should persist  | Works as expected (bug in front end) [bugs](#bugs) |
 
 Manual Testing
 <details><summary>See Testing Results</summary>
 
-![Screenshot](docs/images/feature-testing.gif)
+Admin User Permissions - evidence redacted as it shows user creds
+
+Backend Mech Status toggle
+
+![Backend Mech Status toggle](docs/media/testing-admin-approve-revoke.mov)
+
+Backend Mech Create/Edit/Delete
+
+![Backend Mech Status toggle](docs/media/testing-admin-crud.mov)
 
 </details>
+
 
 6. [Create Read Functionality on Pilots and Mechs](https://github.com/bovinehero/battletech-inventory/issues/11): As a battletech player I need a way to fetch information about pilots and mechs so that I can see which units are available for the campaign.
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| reference feature above | What to do | What should happen  | Works as expected |
+| Read Only Mech List | Login as test_user and go to Mech Inventory | User should see RO version of Mechlist  | Works as expected |
+| Commander Version of Mech List | Login as test_admin and go to Mech Inventory | User should see Commander version of Mechlist  | Works as expected |
+| Read Only Mech Detail | Login as test_user and go to Mech Inventory, select View Mech | User should see RO version of Mech Detail  | Works as expected |
+| Commander Mech Detail | Login as test_admin and go to Mech Inventory, select View Mech | User should see Commander version of Mech Detail  | Works as expected |
 
 Manual Testing
 <details><summary>See Testing Results</summary>
 
-![Screenshot](docs/images/feature-testing.gif)
+User Mech Read Views
+
+![User Mech Read Views](docs/media/testing-user-ro-views.mov)
+
+Commander Mech Read Views
+
+![Commander Mech Read Views](docs/media/testing-sign-up.mov)
 
 </details>
 
@@ -901,12 +924,25 @@ Manual Testing
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| reference feature above | What to do | What should happen  | Works as expected |
+| Commander Version of Mech List | Login as test_admin and go to Mech Inventory select edit mech from actions dropdown and complete form | Mech data should update | Works as expected |
+| Availability Toggle | Login as test_admin and go to Mech Inventory select toggle from Availability column | Mech status should change | Works as expected |
+| Commander Mech Detail | Login as test_admin and go to Mech detail page, select edit and complete form | Mech data should update  | Works as expected |
 
 Manual Testing
 <details><summary>See Testing Results</summary>
 
-![Screenshot](docs/images/feature-testing.gif)
+Commander Version of Mech List 
+
+![Commander Version of Mech List](docs/media/testing-mech-list-update.mov)
+
+Availability Toggle
+
+![Availability Toggle](docs/media/testing-availability-toggle.mov)
+
+
+Commander Mech Detail
+
+![Commander Mech Detail](docs/media/testing-mech-detail-update.mov)
 
 </details>
 
@@ -914,12 +950,16 @@ Manual Testing
 
 | **Feature** | **Action** | **Expected Result** | **Actual Result** |
 |-------------|------------|---------------------|-------------------|
-| reference feature above | What to do | What should happen  | Works as expected |
+| Commander Version of Mech List | Login as test_admin and go to Mech Inventory select Add a New Mech dropdown and complete form | Mech data should be created | Works as expected |
+| Commander Version of Mech List | Login as test_admin and go to Mech Inventory select delete from actions dropdown and confirm | Mech data should delete | Works as expected |
+| Commander Mech Detail | Login as test_admin and go to Mech detail page, select delete and confirm | Mech data should delete  | Works as expected |
 
 Manual Testing
 <details><summary>See Testing Results</summary>
 
-![Screenshot](docs/images/feature-testing.gif)
+![Screenshot](docs/media/testing-create-mech.mov)
+
+![Screenshot](docs/media/testing-delete-mech.mov)
 
 </details>
 
@@ -927,14 +967,28 @@ Manual Testing
 As a battletech player I need a way to easily navigate around the site so that I can interact with pilot and mech details.
 
 
+All previous testing content should show ease of navigation, Footer sends out to social media and navbar allows easy navigation between the pages.
+
 ## Bugs
 ***
-TODO
+
 Following Bugs are found during the development of this project
 
-1. Bug 1
-2. Bug 2
-3. Bug 3
++ Cloudinary Staticfiles storage: Type Error on deploy
+
+I believe this is the result of a combination of environmental and configuration issues, as I was unable to establish root cause.
+
+The workaround implemented is to use whitenoise and host static within the deployed app.
+
++ Cloudinary Staticfiles storage: ETag error on local collectstatic
+
+This appears to be an issue when collectstatic is run and static assets already exist in Cloudinary. This triggers occasionally and is not full replicable, if cloud based static storage is required an alternative solution (like AWS S3 or an optimised media server) would be preferable. 
+
+The workaround implemented is to use whitenoise and host static within the deployed app.
+
++ Broken Links: Backend Mech addition can break the front end if the image or record_sheets fields do not map to an actual resource on the server.
+
+The workaround is via user access, as only the site admin (me) and validated commander users can manipulate these fields. As there is only manual upgrades of accounts to commander, this should not be a significant problem until a mandatory file upload feature is implemented. The Cloud Staticfiles bugs prevented the development of this feature.
 
 ## Deployment and Development Setup
 ***
