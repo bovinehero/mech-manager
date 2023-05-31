@@ -5,7 +5,7 @@
 
 ![Mockup image](docs/imahes/mockup.png)
 
-> TODOs: Bugs, manual testing, map features to user stories
+> TODOs: map features to user stories
 
 
 [View live website](https://bhero-battletech-inventory.herokuapp.com/)
