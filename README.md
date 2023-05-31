@@ -5,6 +5,14 @@
 
 ![Mockup image](docs/imahes/mockup.png)
 
+> TODOs: Bugs, manual testing, map features to user stories
+
++ Design and implement manual and/or automated Python test procedures to assess functionality,usability, responsiveness and data management within the entire web application
++ Design and implement manual and/or automated JavaScript test procedures to assess functionality,usability, responsiveness and data management within the entire web application
++ Document all implemented testing in the README.
++ Commit final code that is free of any passwords or security-sensitive information to the repository and the hosting platform
++ Ensure that the final deployed code is free of commented out code and has no broken internal links
++ Ensure that the final deployed code is free of commented out code and has no broken internal links
 
 [View live website](https://bhero-battletech-inventory.herokuapp.com/)
 
@@ -407,7 +415,7 @@ This allows us to work towards an easy way to implement improvements via Continu
 
 ***
 
-TODO
+TODO - link user stories
 
 ### Admin Backend
 
@@ -430,11 +438,11 @@ Django Backend User Management - Image removed as it contains usernames.
 
 Django Backend User Permissions
 
-![Screenshot](docs/images/feature-user-perms.png)
+![Django Backend User Permissions](docs/images/feature-user-perms.png)
 
 Django Backend User Group
 
-![Screenshot](docs/images/feature-user-groups.png)
+![Django Backend User Group](docs/images/feature-user-groups.png)
 
 </details>
 
@@ -450,11 +458,11 @@ __Description:__  The Mech model is imported into the standard django admin pane
 
 Django Backend Mech List
 
-![Screenshot](docs/images/feature-user-perms.png)
+![Django Backend Mech List](docs/images/feature-user-perms.png)
 
 Django Backend Mech Edit
 
-![Screenshot](docs/images/feature-user-groups.png)
+![Django Backend Mech Edit](docs/images/feature-user-groups.png)
 
 </details>
 
@@ -466,11 +474,33 @@ __User Stories In Feature:__
 
 #### User Management
 
-__Description:__  
+__Description:__  User management service that includes log in, log out and (provided the account has a valid email address associated with it) password resets of an existing accounts via email over sendgrid. Registration of new accounts is also available.
+
+When user's login they will see account options change to welcome and their username in the nav bar.
+
+Django messages will also fire to advise them they have successfully logged in.
 
 <details><summary>See Feature Screen Shots</summary>
 
-![Screenshot](docs/images/feature-hero-image.png)
+Logged in user account options
+
+![Logged in user account options](docs/images/feature-authd.png)
+
+No user logged in user account options
+
+![No user logged in user account options](docs/images/feature-not-auth.png)
+
+Password reset form
+
+![Password reset form](docs/images/feature-password-reset.png)
+
+Sign in Form
+
+![Sign in Form](docs/images/feature-sign-in.png)
+
+Sign up Form
+
+![Sign up Form](docs/images/feature-sign-up.png)
 
 </details>
 
@@ -481,11 +511,13 @@ __User Stories In Feature:__
 
 #### Hero Image
 
-__Description:__  
+__Description:__  Animated Hero landing image to add some visual stimulus to the page.
 
 <details><summary>See Feature Screen Shots</summary>
 
-![Screenshot](docs/images/feature-screenshot.png)
+Hero Image
+
+![Hero Image](docs/images/feature-hero-image.png)
 
 </details>
 
@@ -493,13 +525,19 @@ __User Stories In Feature:__
     Epic: 
     Story 1: What Tasks?
 
-#### Board Game Link
+#### Board & Video Game Links
 
-__Description:__  
+__Description:__  Image links out to external sites for the Board and Video Games so that users can find out more about the game
 
 <details><summary>See Feature Screen Shots</summary>
 
-![Screenshot](docs/images/feature-screenshot.png)
+Link Image to Board Game
+
+![Link Image to Board Game](docs/images/feature-board-game.png)
+
+Link Image to Video Game
+
+![Link Image to Video Game](docs/images/feature-video-game.png)
 
 </details>
 
@@ -507,27 +545,17 @@ __User Stories In Feature:__
     Epic: 
     Story 1: What Tasks?
 
-#### Video Game Link
-
-__Description:__  
-
-<details><summary>See Feature Screen Shots</summary>
-
-![Screenshot](docs/images/feature-screenshot.png)
-
-</details>
-
-__User Stories In Feature:__  
-    Epic: 
-    Story 1: What Tasks?
 
 #### Available Mechs Carousel
 
-__Description:__  
+__Description:__  Slideshow of the current available mechs with name and weight class. All of the other information about the mechs needs a logged in account.
 
 <details><summary>See Feature Screen Shots</summary>
 
-![Screenshot](docs/images/feature-screenshot.png)
+Available Mechs Carousel Examples
+
+![Available Mech Carousel 1](docs/images/feature-mech-carousel-commando.png)
+![Available Mech Carousel 2](docs/images/feature-mech-carousel-awesome.png)
 
 </details>
 
@@ -535,15 +563,14 @@ __User Stories In Feature:__
     Epic: 
     Story 1: What Tasks?
 
-### List of Mechs Page
+#### Socials Footer
 
-#### Add New Mech
+__Description:__  Footer with (mocked) links to social accounts so that users can get in touch with the site owners
 
-__Description:__  
 
 <details><summary>See Feature Screen Shots</summary>
 
-![Screenshot](docs/images/feature-screenshot.png)
+![Screenshot](docs/images/feature-social-footer.png)
 
 </details>
 
@@ -551,13 +578,33 @@ __User Stories In Feature:__
     Epic: 
     Story 1: What Tasks?
 
-#### Quick Actions Dropdown
+#### List of Mechs Page
 
-__Description:__  
+__Description:__  This feature provides 2 different views the lower priv Mechawarrior view which accommodates read only functionality. The Name value allows a user to a view mech, as does the view mech in the actions dropdown menu. Mechs that are available also have a download record sheet where users can download a pdf copy of the mech's in game sheet.
+
+The Commander view dds funcrionlity around create a new Mech with the __Add a New Mech__ option at the top left of the table. 
+
+COmmanders have additional actions in that they can also select edit or delete options in the actions menu drop downs.
+
+In addition Commanders can quick toggle the active status of a mech by clicking on it's Available field.
 
 <details><summary>See Feature Screen Shots</summary>
 
-![Screenshot](docs/images/feature-screenshot.png)
+Mechawarrior List View 
+
+![Mechawarrior View ](docs/images/feature-mechwarrior-list.png)
+
+Mechawarrior Detail View 
+
+![Mechawarrior Detail View ](docs/images/feature-more-detail-lowpriv.png)
+
+Commander List View 
+
+![Mechawarrior View ](docs/images/feature-commander-list.png)
+
+Commander Detail View 
+
+![Commander Detail View ](docs/images/feature-more-detail-fullpriv.png)
 
 </details>
 
@@ -565,63 +612,7 @@ __User Stories In Feature:__
     Epic: 
     Story 1: What Tasks?
 
-#### Availability Status / Toggle
 
-__Description:__  
-
-<details><summary>See Feature Screen Shots</summary>
-
-![Screenshot](docs/images/feature-screenshot.png)
-
-</details>
-
-__User Stories In Feature:__  
-    Epic: 
-    Story 1: What Tasks?
-
-### List of Mechs Page
-
-#### Record Sheets Iframe Reviewer
-
-__Description:__  
-
-<details><summary>See Feature Screen Shots</summary>
-
-![Screenshot](docs/images/feature-screenshot.png)
-
-</details>
-
-__User Stories In Feature:__  
-    Epic: 
-    Story 1: What Tasks?
-
-#### Edit Mech
-
-__Description:__  
-
-<details><summary>See Feature Screen Shots</summary>
-
-![Screenshot](docs/images/feature-screenshot.png)
-
-</details>
-
-__User Stories In Feature:__  
-    Epic: 
-    Story 1: What Tasks?
-
-#### Delete Mech
-
-__Description:__  
-
-<details><summary>See Feature Screen Shots</summary>
-
-![Screenshot](docs/images/feature-screenshot.png)
-
-</details>
-
-__User Stories In Feature:__  
-    Epic: 
-    Story 1: What Tasks?
 
 ## Future Features
 ***
