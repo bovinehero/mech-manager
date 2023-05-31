@@ -889,7 +889,7 @@ Admin User Permissions - evidence redacted as it shows user creds
 
 Backend Mech Status toggle
 
-![Backend Mech Status toggle](docs/media/testing-admin-approve-revoke.mov)
+[Backend Mech Status toggle](docs/media/testing-admin-approve-revoke.mov)
 
 Backend Mech Create/Edit/Delete
 
