@@ -437,7 +437,7 @@ Django Backend User Group
 
 __User Stories In Feature:__  
     Epic: 1, 2, 3
-    Story 1: What Tasks?
+    Story: 5, 7, 8, 9
 
 #### Mech Management
 
@@ -457,7 +457,7 @@ Django Backend Mech Edit
 
 __User Stories In Feature:__  
     Epic: 1, 2, 3
-    Story 1: What Tasks?
+    Story: 5, 7, 8, 9
 
 ### Index Page
 
@@ -495,7 +495,7 @@ Sign up Form
 
 __User Stories In Feature:__  
     Epic: 1, 2, 3
-    Story 1: What Tasks?
+    Story: 4, 5, 7, 8, 9
 
 
 #### Hero Image
@@ -512,7 +512,7 @@ Hero Image
 
 __User Stories In Feature:__  
     Epic: 2, 3
-    Story 1: What Tasks?
+    Story: 9
 
 #### Board & Video Game Links
 
@@ -532,7 +532,7 @@ Link Image to Video Game
 
 __User Stories In Feature:__  
     Epic: 2, 3
-    Story 1: What Tasks?
+    Story: 9
 
 
 #### Available Mechs Carousel
@@ -550,7 +550,7 @@ Available Mechs Carousel Examples
 
 __User Stories In Feature:__  
     Epic: 2, 3
-    Story 1: What Tasks?
+    Story: 9
 
 #### Socials Footer
 
@@ -565,6 +565,7 @@ __Description:__  Footer with (mocked) links to social accounts so that users ca
 
 __User Stories In Feature:__  
     Epic: 3
+    Story: 9
 
 #### List of Mechs Page
 
@@ -598,7 +599,7 @@ Commander Detail View
 
 __User Stories In Feature:__  
     Epic: 1, 2, 3
-    Story 1: What Tasks?
+    Story: All
 
 
 
