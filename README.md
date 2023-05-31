@@ -3,10 +3,7 @@
 # Knowledge Flow
 (Developer: Gary Grant)
 
-![Mockup image](docs/imahes/mockup.png)
-
-> TODOs: map features to user stories
-
+![Repo Header](docs/images/repo-header.jpg)
 
 [View live website](https://bhero-battletech-inventory.herokuapp.com/)
 
@@ -409,8 +406,6 @@ This allows us to work towards an easy way to implement improvements via Continu
 
 ***
 
-TODO - link user stories
-
 ### Admin Backend
 
 #### User Management
@@ -441,7 +436,7 @@ Django Backend User Group
 </details>
 
 __User Stories In Feature:__  
-    Epic: 
+    Epic: 1, 2, 3
     Story 1: What Tasks?
 
 #### Mech Management
@@ -461,7 +456,7 @@ Django Backend Mech Edit
 </details>
 
 __User Stories In Feature:__  
-    Epic: 
+    Epic: 1, 2, 3
     Story 1: What Tasks?
 
 ### Index Page
@@ -499,7 +494,7 @@ Sign up Form
 </details>
 
 __User Stories In Feature:__  
-    Epic: 
+    Epic: 1, 2, 3
     Story 1: What Tasks?
 
 
@@ -516,7 +511,7 @@ Hero Image
 </details>
 
 __User Stories In Feature:__  
-    Epic: 
+    Epic: 2, 3
     Story 1: What Tasks?
 
 #### Board & Video Game Links
@@ -536,7 +531,7 @@ Link Image to Video Game
 </details>
 
 __User Stories In Feature:__  
-    Epic: 
+    Epic: 2, 3
     Story 1: What Tasks?
 
 
@@ -554,7 +549,7 @@ Available Mechs Carousel Examples
 </details>
 
 __User Stories In Feature:__  
-    Epic: 
+    Epic: 2, 3
     Story 1: What Tasks?
 
 #### Socials Footer
@@ -569,8 +564,7 @@ __Description:__  Footer with (mocked) links to social accounts so that users ca
 </details>
 
 __User Stories In Feature:__  
-    Epic: 
-    Story 1: What Tasks?
+    Epic: 3
 
 #### List of Mechs Page
 
@@ -603,7 +597,7 @@ Commander Detail View
 </details>
 
 __User Stories In Feature:__  
-    Epic: 
+    Epic: 1, 2, 3
     Story 1: What Tasks?
 
 
@@ -811,6 +805,8 @@ coverage report
 Results of the test can be found int the [docs/htmlcov](docs/htmlcov) Directory
 
 ### Testing User Stories
+
+> Raw Video evidence for testing is available in docs/media
 
 1. [Setup Heroku](https://github.com/bovinehero/battletech-inventory/issues/2): As a Developer I need a remote hosting solution for the application so that build and test on a prod-like env.
 
