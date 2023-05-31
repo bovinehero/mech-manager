@@ -860,7 +860,7 @@ ElephantSQL
 
 Register new User 
 
-![Register new User](docs/media/testing-sign-up.mov)
+![Register new User](docs/images/testing-sign-up.gif)
 
 Reset User Password - evidence redacted as email address is PII
 
@@ -889,11 +889,11 @@ Admin User Permissions - evidence redacted as it shows user creds
 
 Backend Mech Status toggle
 
-[Backend Mech Status toggle](docs/media/testing-admin-approve-revoke.mov)
+![Backend Mech Status toggle](docs/images/testing-admin-approve-revoke.gif)
 
 Backend Mech Create/Edit/Delete
 
-![Backend Mech Status toggle](docs/media/testing-admin-crud.mov)
+![Backend Mech Status toggle](docs/images/testing-admin-crud.gif)
 
 </details>
 
@@ -912,11 +912,11 @@ Manual Testing
 
 User Mech Read Views
 
-![User Mech Read Views](docs/media/testing-user-ro-views.mov)
+![User Mech Read Views](docs/images/testing-user-ro-views.gif)
 
 Commander Mech Read Views
 
-![Commander Mech Read Views](docs/media/testing-sign-up.mov)
+![Commander Mech Read Views](docs/images/testing-sign-up.gif)
 
 </details>
 
@@ -933,16 +933,16 @@ Manual Testing
 
 Commander Version of Mech List 
 
-![Commander Version of Mech List](docs/media/testing-mech-list-update.mov)
+![Commander Version of Mech List](docs/images/testing-mech-list-update.gif)
 
 Availability Toggle
 
-![Availability Toggle](docs/media/testing-availability-toggle.mov)
+![Availability Toggle](docs/images/testing-availability-toggle.gif)
 
 
 Commander Mech Detail
 
-![Commander Mech Detail](docs/media/testing-mech-detail-update.mov)
+![Commander Mech Detail](docs/images/testing-mech-detail-update.gif)
 
 </details>
 
@@ -957,9 +957,9 @@ Commander Mech Detail
 Manual Testing
 <details><summary>See Testing Results</summary>
 
-![Screenshot](docs/media/testing-create-mech.mov)
+![Screenshot](docs/images/testing-create-mech.gif)
 
-![Screenshot](docs/media/testing-delete-mech.mov)
+![Screenshot](docs/images/testing-delete-mech.gif)
 
 </details>
 
